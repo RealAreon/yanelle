@@ -1,0 +1,76 @@
+<header class="site-header">
+  <div class="page-gutter site-header__inner">
+    <nav class="site-header__nav" aria-label="{{ 'accessibility.primary_nav' | t }}">
+      <a href="{{ routes.all_products_collection_url }}">{{ 'general.nav.shop' | t }}</a>
+      <a href="{{ routes.collections_url }}">{{ 'general.nav.collections' | t }}</a>
+      <a href="{{ pages[section.settings.lookbook_page].url | default: '/pages/lookbook' }}">{{ 'general.nav.lookbook' | t }}</a>
+      <a href="{{ pages[section.settings.about_page].url | default: '/pages/about' }}">{{ 'general.nav.about' | t }}</a>
+    </nav>
+
+    <div class="site-header__menu-trigger">
+      <button type="button" class="icon-btn" data-mobile-nav-open aria-label="{{ 'accessibility.menu' | t }}">
+        {% render 'icon-menu' %}
+      </button>
+    </div>
+
+    <a href="{{ routes.root_url }}" class="site-header__logo brand-lettering">ＹＡＮÈＬＬＥ</a>
+
+    <div class="site-header__actions">
+      <a href="{{ routes.search_url }}" class="icon-btn" aria-label="{{ 'general.nav.search' | t }}">
+        {% render 'icon-search' %}
+      </a>
+      <a href="{{ pages[section.settings.wishlist_page].url | default: '/pages/wishlist' }}" class="icon-btn wishlist-link" aria-label="{{ 'general.nav.wishlist' | t }}">
+        {% render 'icon-heart' %}
+        <span class="cart-count" data-wishlist-count hidden>0</span>
+      </a>
+      <button type="button" class="icon-btn" data-cart-open aria-label="{{ 'general.nav.cart' | t }}">
+        {% render 'icon-cart' %}
+        <span class="cart-count" data-cart-count {% if cart.item_count == 0 %}hidden{% endif %}>{{ cart.item_count }}</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav" data-mobile-nav>
+  <button type="button" class="icon-btn mobile-nav__close" data-mobile-nav-close aria-label="{{ 'accessibility.close' | t }}">
+    {% render 'icon-close' %}
+  </button>
+  <div class="mobile-nav__header">
+    <a href="{{ routes.root_url }}" class="brand-lettering font-heading" style="font-size:1.125rem;letter-spacing:0.35em;" data-mobile-nav-close>ＹＡＮÈＬＬＥ</a>
+  </div>
+  <nav class="mobile-nav__links">
+    <a href="{{ routes.all_products_collection_url }}" data-mobile-nav-close>{{ 'general.nav.shop' | t }}</a>
+    <a href="{{ routes.collections_url }}" data-mobile-nav-close>{{ 'general.nav.collections' | t }}</a>
+    <a href="{{ pages[section.settings.lookbook_page].url | default: '/pages/lookbook' }}" data-mobile-nav-close>{{ 'general.nav.lookbook' | t }}</a>
+    <a href="{{ pages[section.settings.about_page].url | default: '/pages/about' }}" data-mobile-nav-close>{{ 'general.nav.about' | t }}</a>
+    <a href="{{ pages[section.settings.contact_page].url | default: '/pages/contact' }}" data-mobile-nav-close>{{ 'general.nav.contact' | t }}</a>
+  </nav>
+</div>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "page",
+      "id": "lookbook_page",
+      "label": "Lookbook page"
+    },
+    {
+      "type": "page",
+      "id": "about_page",
+      "label": "About page"
+    },
+    {
+      "type": "page",
+      "id": "contact_page",
+      "label": "Contact page"
+    },
+    {
+      "type": "page",
+      "id": "wishlist_page",
+      "label": "Wishlist page"
+    }
+  ]
+}
+{% endschema %}

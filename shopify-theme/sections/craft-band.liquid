@@ -1,0 +1,37 @@
+<section class="craft">
+  <div class="craft__media">
+    {% if section.settings.image != blank %}
+      {{ section.settings.image | image_url: width: 2000 | image_tag: loading: 'lazy' }}
+    {% else %}
+      <img src="https://images.unsplash.com/photo-1558171813-4c088753af8f?auto=format&fit=crop&w=2000&q=85" alt="" loading="lazy" width="2000" height="1200">
+    {% endif %}
+    <div class="craft__shade"></div>
+  </div>
+  <div class="page-gutter craft__content">
+    <div class="fade-in">
+      <p class="eyebrow">{{ section.settings.eyebrow }}</p>
+      <h2 class="section-title font-heading" style="max-width:32rem;">{{ section.settings.title }}</h2>
+    </div>
+    <div class="fade-in" data-delay="1">
+      <p class="craft__body">{{ section.settings.body }}</p>
+      {% if section.settings.cta_label != blank %}
+        <a class="craft__cta" href="{{ section.settings.cta_link | default: '/pages/about' }}">{{ section.settings.cta_label }}</a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Craftsmanship",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Background" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Майстерність" },
+    { "type": "text", "id": "title", "label": "Title", "default": "Шов, тканина, час" },
+    { "type": "textarea", "id": "body", "label": "Body", "default": "Кожна річ проходить через ательє: перевірка пропорції, дотику матеріалу й довговічності. Менше жестів — більше точності." },
+    { "type": "text", "id": "cta_label", "label": "CTA", "default": "Про бренд" },
+    { "type": "url", "id": "cta_link", "label": "CTA link" }
+  ],
+  "presets": [{ "name": "Craftsmanship" }]
+}
+{% endschema %}

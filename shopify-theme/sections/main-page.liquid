@@ -1,0 +1,246 @@
+<section class="page-gutter">
+  {% if page.handle == 'about' or section.settings.layout == 'about' %}
+    <div class="about-grid">
+      <div class="about-grid__media">
+        {% if section.settings.image != blank %}
+          {{ section.settings.image | image_url: width: 1400 | image_tag: loading: 'eager' }}
+        {% else %}
+          <img src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=1400&q=85" alt="" loading="eager" width="1400" height="1750">
+        {% endif %}
+      </div>
+      <div class="about-grid__copy">
+        <div class="fade-in" style="max-width:36rem;">
+          <p class="eyebrow">{{ section.settings.eyebrow | default: 'Наш дім' }}</p>
+          <h1 class="font-heading" style="margin-top:1.25rem;font-size:clamp(2.25rem,5vw,3.75rem);">{{ page.title }}</h1>
+          <p class="brand-lettering font-heading" style="margin-top:1.5rem;font-size:1.5rem;color:var(--champagne);">ＹＡＮÈＬＬＥ</p>
+          <div class="gold-rule"></div>
+          <div class="text-muted" style="font-size:0.875rem;line-height:2;">
+            {% if page.content != blank %}
+              {{ page.content }}
+            {% else %}
+              <p>ＹＡＮÈＬＬＥ засновано з тихою увагою до форми, матеріалу й простору між ними. Ми створюємо жіночий одяг і аксесуари середньої розкоші — без зайвого жесту, з повагою до силуету й часу. Засновниця бренду будувала цю мову як капсулу спокою: менше шуму, більше ясності. Кожна річ проходить через ательє, де важливі пропорція, дотик тканини та довговічність.</p>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+  {% elsif page.handle == 'lookbook' or section.settings.layout == 'lookbook' %}
+    <div class="page-header fade-in">
+      <p class="eyebrow">{{ section.settings.lookbook_eyebrow | default: 'Editorial 01' }}</p>
+      <h1 class="font-heading">{{ page.title }}</h1>
+      {% if section.settings.lookbook_subtitle != blank %}
+        <p class="text-muted" style="margin-top:1rem;max-width:36rem;font-size:0.875rem;line-height:1.75;">{{ section.settings.lookbook_subtitle }}</p>
+      {% elsif page.content != blank %}
+        <div class="text-muted" style="margin-top:1rem;max-width:36rem;">{{ page.content }}</div>
+      {% endif %}
+    </div>
+    <div class="lookbook-grid fade-in">
+      {% for block in section.blocks %}
+        <figure class="lookbook-item{% if block.settings.wide %} lookbook-item--wide{% endif %}" {{ block.shopify_attributes }}>
+          {% if block.settings.image != blank %}
+            {{ block.settings.image | image_url: width: 1000 | image_tag: loading: 'lazy' }}
+          {% elsif block.settings.image_url != blank %}
+            <img src="{{ block.settings.image_url }}" alt="" loading="lazy" width="1000" height="1333">
+          {% else %}
+            <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80" alt="" loading="lazy" width="1000" height="1333">
+          {% endif %}
+          {% if block.settings.caption != blank %}
+            <span>{{ block.settings.caption }}</span>
+          {% endif %}
+        </figure>
+      {% endfor %}
+    </div>
+
+  {% elsif page.handle == 'contact' or section.settings.layout == 'contact' %}
+    <div class="page-header fade-in">
+      <p class="eyebrow">Client service</p>
+      <h1 class="font-heading">{{ page.title }}</h1>
+      <div class="text-muted" style="margin-top:1rem;max-width:36rem;font-size:0.875rem;line-height:1.75;">
+        {% if page.content != blank %}
+          {{ page.content }}
+        {% else %}
+          <p>Напишіть нам — відповімо спокійно й по суті.</p>
+        {% endif %}
+      </div>
+    </div>
+    <div class="contact-grid fade-in">
+      <a class="contact-card" href="mailto:{{ settings.social_email }}">
+        <p class="eyebrow">Email</p>
+        <h3 class="font-heading">{{ settings.social_email }}</h3>
+      </a>
+      <a class="contact-card" href="{{ settings.social_instagram }}" target="_blank" rel="noopener">
+        <p class="eyebrow">Instagram</p>
+        <h3 class="font-heading">@yanelle</h3>
+      </a>
+      <a class="contact-card" href="{{ settings.social_telegram }}" target="_blank" rel="noopener">
+        <p class="eyebrow">Telegram</p>
+        <h3 class="font-heading">Telegram</h3>
+      </a>
+      <a class="contact-card" href="{{ settings.social_whatsapp }}" target="_blank" rel="noopener">
+        <p class="eyebrow">WhatsApp</p>
+        <h3 class="font-heading">WhatsApp</h3>
+      </a>
+    </div>
+
+  {% elsif page.handle == 'shipping' or section.settings.layout == 'shipping' %}
+    <div class="page-header fade-in">
+      <h1 class="font-heading">{{ page.title }}</h1>
+    </div>
+    <div class="shipping-grid fade-in">
+      <div class="shipping-card">
+        <h2 class="font-heading" style="font-size:1.875rem;margin-top:1.5rem;">{{ 'pages.shipping.delivery_title' | t }}</h2>
+        <p class="text-muted" style="margin-top:1rem;font-size:0.875rem;line-height:1.75;">
+          {% if section.settings.delivery != blank %}
+            {{ section.settings.delivery }}
+          {% elsif page.content != blank %}
+            {{ page.content }}
+          {% else %}
+            Доставляємо по Україні Новою Поштою у відділення або поштомат. Оплата — накладеним платежем при отриманні або карткою онлайн. Міжнародна доставка — за запитом.
+          {% endif %}
+        </p>
+      </div>
+      <div class="shipping-card">
+        <h2 class="font-heading" style="font-size:1.875rem;margin-top:1.5rem;">{{ 'pages.shipping.free_title' | t }}</h2>
+        <p class="text-muted" style="margin-top:1rem;font-size:0.875rem;line-height:1.75;">{{ section.settings.complimentary }}</p>
+      </div>
+      <div class="shipping-card">
+        <h2 class="font-heading" style="font-size:1.875rem;margin-top:1.5rem;">{{ 'pages.shipping.returns_title' | t }}</h2>
+        <p class="text-muted" style="margin-top:1rem;font-size:0.875rem;line-height:1.75;">{{ section.settings.returns }}</p>
+      </div>
+    </div>
+    <p class="shipping-note fade-in">{{ section.settings.returns_note }}</p>
+
+  {% elsif page.handle == 'wishlist' or section.settings.layout == 'wishlist' %}
+    <div data-wishlist-page>
+      <div class="page-header fade-in">
+        <h1 class="font-heading">{{ page.title }}</h1>
+        <p class="text-muted" style="margin-top:1rem;">{{ 'pages.wishlist.hint' | t }}</p>
+      </div>
+      <div class="product-grid fade-in" data-wishlist-grid></div>
+      <div data-wishlist-empty hidden class="fade-in" style="padding:2rem 0 5rem;">
+        <p class="text-muted">{{ 'pages.wishlist.empty' | t }}</p>
+        <a class="btn" style="margin-top:1.5rem;" href="{{ routes.all_products_collection_url }}">{{ 'general.nav.shop' | t }}</a>
+      </div>
+    </div>
+
+  {% elsif page.handle == 'terms' or page.handle == 'privacy' or page.handle == 'cookies' %}
+    <article class="prose-page fade-in">
+      <p class="eyebrow">{{ 'pages.legal.eyebrow' | t }}</p>
+      {% if page.content != blank %}
+        <h1 class="font-heading">{{ page.title }}</h1>
+        <div class="intro">{{ page.content }}</div>
+      {% elsif page.handle == 'terms' %}
+        <h1 class="font-heading">Політика використання</h1>
+        <p class="intro text-muted" style="font-size:0.875rem;line-height:1.75;">Ця Політика використання регулює доступ і користування сайтом ＹＡＮÈＬＬＥ, оформлення замовлень і взаємодію з нашим сервісом.</p>
+        <h2 class="font-heading" style="font-size:1.5rem;margin-top:2.5rem;">Загальні положення</h2>
+        <p class="text-muted" style="margin-top:1rem;font-size:0.875rem;line-height:1.75;">Користуючись сайтом, ви підтверджуєте, що ознайомились із цією політикою та погоджуєтесь із її умовами. Якщо ви не згодні — будь ласка, не користуйтесь сайтом.</p>
+        <h2 class="font-heading" style="font-size:1.5rem;margin-top:2.5rem;">Замовлення та оплата</h2>
+        <p class="text-muted" style="margin-top:1rem;font-size:0.875rem;line-height:1.75;">Замовлення оформлюються через кошик сайту. Основний спосіб доставки — Нова Пошта. Оплата можлива накладеним платежем при отриманні або онлайн (коли сервіс буде підключено).</p>
+        <p class="text-muted" style="margin-top:1rem;font-size:0.875rem;line-height:1.75;">Ми можемо звʼязатись із вами для підтвердження замовлення. ＹＡＮÈＬＬＥ залишає за собою право відмовити в замовленні у разі помилки ціни, відсутності товару або підозри на шахрайство.</p>
+        <h2 class="font-heading" style="font-size:1.5rem;margin-top:2.5rem;">Доставка та повернення</h2>
+        <p class="text-muted" style="margin-top:1rem;font-size:0.875rem;line-height:1.75;">Умови доставки й повернення описані на сторінці «Доставка». Повернення можливе протягом 14 днів за умови збереження товарного вигляду, бірки та комплектації. Для оплати карткою може вимагатися відео розпакування.</p>
+        <h2 class="font-heading" style="font-size:1.5rem;margin-top:2.5rem;">Інтелектуальна власність</h2>
+        <p class="text-muted" style="margin-top:1rem;font-size:0.875rem;line-height:1.75;">Усі матеріали сайту (тексти, зображення, дизайн, логотип) належать ＹＡＮÈＬＬＥ або використовуються на законних підставах. Копіювання без письмової згоди заборонено.</p>
+        <h2 class="font-heading" style="font-size:1.5rem;margin-top:2.5rem;">Контакти</h2>
+        <p class="text-muted" style="margin-top:1rem;font-size:0.875rem;line-height:1.75;">З питань політики використання звертайтесь: hello@yanelle.com</p>
+      {% elsif page.handle == 'privacy' %}
+        <h1 class="font-heading">Політика конфіденційності</h1>
+        <p class="intro text-muted" style="font-size:0.875rem;line-height:1.75;">Ми поважаємо вашу приватність і обробляємо персональні дані лише для виконання замовлень і покращення сервісу.</p>
+        <h2 class="font-heading" style="font-size:1.5rem;margin-top:2.5rem;">Які дані ми збираємо</h2>
+        <p class="text-muted" style="margin-top:1rem;font-size:0.875rem;line-height:1.75;">Імʼя, телефон, email, місто, адреса / відділення Нової Пошти, зміст замовлення, а також технічні дані (cookie, тип пристрою, мова інтерфейсу) — у межах необхідного для роботи сайту.</p>
+        <h2 class="font-heading" style="font-size:1.5rem;margin-top:2.5rem;">Для чого використовуємо дані</h2>
+        <p class="text-muted" style="margin-top:1rem;font-size:0.875rem;line-height:1.75;">Для оформлення та доставки замовлень, звʼязку з вами, підтримки клієнтів, аналітики відвідуваності (якщо увімкнено) та виконання вимог законодавства.</p>
+        <h2 class="font-heading" style="font-size:1.5rem;margin-top:2.5rem;">Передача третім сторонам</h2>
+        <p class="text-muted" style="margin-top:1rem;font-size:0.875rem;line-height:1.75;">Дані можуть передаватись службі доставки (Нова Пошта) і платіжним провайдерам — лише в обсязі, потрібному для виконання замовлення. Ми не продаємо персональні дані.</p>
+        <h2 class="font-heading" style="font-size:1.5rem;margin-top:2.5rem;">Ваші права</h2>
+        <p class="text-muted" style="margin-top:1rem;font-size:0.875rem;line-height:1.75;">Ви можете запросити доступ, виправлення або видалення своїх даних, написавши на hello@yanelle.com. Деякі дані ми зберігаємо стільки, скільки потрібно для обліку замовлень і закону.</p>
+      {% elsif page.handle == 'cookies' %}
+        <h1 class="font-heading">Політика щодо куки-файлів</h1>
+        <p class="intro text-muted" style="font-size:0.875rem;line-height:1.75;">Сайт ＹＡＮÈＬＬＥ використовує cookie та подібні технології, щоб зберігати ваші налаштування й забезпечувати коректну роботу сервісу.</p>
+        <h2 class="font-heading" style="font-size:1.5rem;margin-top:2.5rem;">Що таке cookie</h2>
+        <p class="text-muted" style="margin-top:1rem;font-size:0.875rem;line-height:1.75;">Cookie — невеликі файли, які зберігаються у вашому браузері. Вони допомагають запамʼятати мову, валюту, вміст кошика та інші параметри сесії.</p>
+        <h2 class="font-heading" style="font-size:1.5rem;margin-top:2.5rem;">Які cookie ми використовуємо</h2>
+        <p class="text-muted" style="margin-top:1rem;font-size:0.875rem;line-height:1.75;">Необхідні — для роботи кошика, оформлення замовлення та базових налаштувань.<br><br>Функціональні — мова, валюта, обране.<br><br>Аналітичні — за потреби, для розуміння, як користуються сайтом (без продажу даних).</p>
+        <h2 class="font-heading" style="font-size:1.5rem;margin-top:2.5rem;">Керування cookie</h2>
+        <p class="text-muted" style="margin-top:1rem;font-size:0.875rem;line-height:1.75;">Ви можете обмежити або видалити cookie в налаштуваннях браузера. Вимкнення необхідних cookie може вплинути на роботу кошика та оформлення замовлення.</p>
+        <h2 class="font-heading" style="font-size:1.5rem;margin-top:2.5rem;">Контакти</h2>
+        <p class="text-muted" style="margin-top:1rem;font-size:0.875rem;line-height:1.75;">Питання щодо cookie: hello@yanelle.com</p>
+      {% endif %}
+    </article>
+
+  {% else %}
+    <article class="prose-page fade-in">
+      <p class="eyebrow">{{ 'pages.legal.eyebrow' | t }}</p>
+      <h1 class="font-heading">{{ page.title }}</h1>
+      <div class="intro">{{ page.content }}</div>
+    </article>
+  {% endif %}
+</section>
+
+{% schema %}
+{
+  "name": "Page",
+  "settings": [
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "options": [
+        { "value": "default", "label": "Default / Legal" },
+        { "value": "about", "label": "About" },
+        { "value": "lookbook", "label": "Lookbook" },
+        { "value": "contact", "label": "Contact" },
+        { "value": "shipping", "label": "Shipping" },
+        { "value": "wishlist", "label": "Wishlist" }
+      ],
+      "default": "default"
+    },
+    { "type": "image_picker", "id": "image", "label": "About image" },
+    { "type": "text", "id": "eyebrow", "label": "About eyebrow", "default": "Наш дім" },
+    { "type": "text", "id": "lookbook_eyebrow", "label": "Lookbook eyebrow", "default": "Editorial 01" },
+    {
+      "type": "textarea",
+      "id": "lookbook_subtitle",
+      "label": "Lookbook subtitle",
+      "default": "Редакційні кадри та тихі пропорції — без зайвого шуму."
+    },
+    {
+      "type": "textarea",
+      "id": "delivery",
+      "label": "Delivery text",
+      "default": "Доставляємо по Україні Новою Поштою у відділення або поштомат. Оплата — накладеним платежем при отриманні або карткою онлайн. Міжнародна доставка — за запитом."
+    },
+    {
+      "type": "textarea",
+      "id": "complimentary",
+      "label": "Shipping complimentary",
+      "default": "Безкоштовна доставка Новою Поштою для кожного замовлення."
+    },
+    {
+      "type": "textarea",
+      "id": "returns",
+      "label": "Returns",
+      "default": "Повернення протягом 14 днів за умови збереження товарного вигляду, бірки та комплектації."
+    },
+    {
+      "type": "textarea",
+      "id": "returns_note",
+      "label": "Returns note",
+      "default": "Для замовлень з оплатою карткою повернення приймається лише за наявності відео розпакування посилки без монтажу."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "look",
+      "name": "Lookbook image",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "image_url", "label": "Image URL (fallback)" },
+        { "type": "text", "id": "caption", "label": "Caption" },
+        { "type": "checkbox", "id": "wide", "label": "Wide column span", "default": false }
+      ]
+    }
+  ]
+}
+{% endschema %}

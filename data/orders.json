@@ -1,0 +1,129 @@
+[
+  {
+    "customer": {
+      "name": "Федя",
+      "email": "areon.softer@mail.com",
+      "phone": "0930259157",
+      "city": "Киев",
+      "address": "Булаховского 38, кв 57",
+      "postal": "",
+      "notes": ""
+    },
+    "shippingMethod": "nova_poshta",
+    "paymentMethod": "cod",
+    "locale": "en",
+    "items": [
+      {
+        "productId": "yn-003",
+        "slug": "bias-cut-satin-dress",
+        "name": "Bias-Cut Satin Dress",
+        "image": "https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=1200&q=80",
+        "priceUAH": 15200,
+        "variantId": "yn-003-1A1A1A-s",
+        "size": "S",
+        "color": "Black",
+        "quantity": 2
+      },
+      {
+        "productId": "yn-002",
+        "slug": "cashmere-wrap-dress",
+        "name": "Cashmere Wrap Dress",
+        "image": "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&w=1200&q=80",
+        "priceUAH": 16800,
+        "variantId": "yn-002-C4A484-xs",
+        "size": "XS",
+        "color": "Camel",
+        "quantity": 1
+      },
+      {
+        "productId": "yn-006",
+        "slug": "double-face-coat",
+        "name": "Double-Face Coat",
+        "image": "https://images.unsplash.com/photo-1539533018447-63fcce2678e3?auto=format&fit=crop&w=1200&q=80",
+        "priceUAH": 24500,
+        "variantId": "yn-006-C4A484-s",
+        "size": "S",
+        "color": "Camel",
+        "quantity": 2
+      }
+    ],
+    "id": "YN-2026-8964AB55",
+    "createdAt": "2026-08-30T15:53:20.628Z",
+    "status": "cod_pending",
+    "paymentNote": "Nova Poshta · cash on delivery (накладений платіж).",
+    "totalUAH": 96200
+  },
+  {
+    "customer": {
+      "name": "Федя",
+      "email": "areon.softer@mail.com",
+      "phone": "0930259157",
+      "city": "Киев",
+      "address": "Булаховского 38, кв 57",
+      "postal": "",
+      "notes": ""
+    },
+    "paymentMethod": "online",
+    "locale": "uk",
+    "items": [
+      {
+        "productId": "yn-003",
+        "slug": "bias-cut-satin-dress",
+        "name": "Bias-Cut Satin Dress",
+        "image": "https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=1200&q=80",
+        "priceUAH": 15200,
+        "variantId": "yn-003-E8D5B7-xs",
+        "size": "XS",
+        "color": "Champagne",
+        "quantity": 1
+      },
+      {
+        "productId": "yn-001",
+        "slug": "silk-column-dress",
+        "name": "Silk Column Dress",
+        "image": "https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=1200&q=80",
+        "priceUAH": 14500,
+        "variantId": "yn-001-1A1A1A-m",
+        "size": "M",
+        "color": "Black",
+        "quantity": 1
+      }
+    ],
+    "id": "YN-2026-D1AF0B7D",
+    "createdAt": "2026-08-18T21:28:29.928Z",
+    "status": "awaiting_payment",
+    "paymentNote": "Online card gateway will be connected; demo order accepted.",
+    "totalUAH": 29700
+  },
+  {
+    "customer": {
+      "name": "Федя",
+      "email": "areon.softer@mail.com",
+      "phone": "0930259157",
+      "city": "Киев",
+      "address": "Булаховского 38, кв 57",
+      "postal": "",
+      "notes": ""
+    },
+    "paymentMethod": "online",
+    "locale": "en",
+    "items": [
+      {
+        "productId": "yn-002",
+        "slug": "cashmere-wrap-dress",
+        "name": "Cashmere Wrap Dress",
+        "image": "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&w=1200&q=80",
+        "priceUAH": 16800,
+        "variantId": "yn-002-C4A484-xs",
+        "size": "XS",
+        "color": "Camel",
+        "quantity": 1
+      }
+    ],
+    "id": "YN-2026-90A66B6F",
+    "createdAt": "2026-08-18T21:21:12.033Z",
+    "status": "awaiting_payment",
+    "paymentNote": "Online card gateway will be connected; demo order accepted.",
+    "totalUAH": 16800
+  }
+]

@@ -1,0 +1,138 @@
+{
+  "lookbook": [
+    {
+      "title": "Ранкове світло",
+      "image": "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1400&q=80",
+      "slug": "morning-light"
+    },
+    {
+      "title": "Міський спокій",
+      "image": "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1400&q=80",
+      "slug": "city-calm"
+    },
+    {
+      "title": "М'яка структура",
+      "image": "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1400&q=80",
+      "slug": "soft-structure"
+    },
+    {
+      "title": "Вечірня лінія",
+      "image": "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=1400&q=80",
+      "slug": "evening-line"
+    },
+    {
+      "title": "Година галереї",
+      "image": "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1400&q=80",
+      "slug": "gallery-hour"
+    },
+    {
+      "title": "Тиша ательє",
+      "image": "https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=1400&q=80",
+      "slug": "atelier-quiet"
+    },
+    {
+      "title": "Година льону",
+      "image": "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1600&q=80",
+      "slug": "linen-hour"
+    },
+    {
+      "title": "Камінь і шовк",
+      "image": "https://images.unsplash.com/photo-1529139576470-58578d8c0c2a?auto=format&fit=crop&w=1400&q=80",
+      "slug": "stone-and-silk"
+    },
+    {
+      "title": "Вікенд-едіт",
+      "image": "https://images.unsplash.com/photo-1487222477894-8943e31effd6?auto=format&fit=crop&w=1400&q=80",
+      "slug": "weekend-edit"
+    },
+    {
+      "title": "Рамка зі слонової кістки",
+      "image": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1400&q=80",
+      "slug": "ivory-frame"
+    },
+    {
+      "title": "Погода для пальта",
+      "image": "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1400&q=80",
+      "slug": "coat-weather"
+    },
+    {
+      "title": "Тиха вечеря",
+      "image": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1600&q=80",
+      "slug": "quiet-dinner"
+    }
+  ],
+  "journalPosts": [
+    {
+      "category": "Журнал",
+      "title": "Тканини, що говорять пошепки",
+      "excerpt": "Чому тиха розкіш починається з дотику — і як ми обираємо матеріали для капсули сезону.",
+      "image": "https://images.unsplash.com/photo-1558171813-4c088753af8f?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "category": "Стиль",
+      "title": "Нотатки про пропорцію",
+      "excerpt": "Довжина, плечі, баланс сумки — невеликі рішення, що змінюють весь силует.",
+      "image": "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "category": "Подорож",
+      "title": "Легко пакувати, довго носити",
+      "excerpt": "Як зібрати капсулу з 6 речей для тижня між містами — без компромісу з естетикою.",
+      "image": "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=80"
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "Речі сидять тихо і точно — ніби їх збирали саме під мій ритм. Це рідкісне відчуття в онлайн-магазині.",
+      "name": "Olena M.",
+      "role": "Київ"
+    },
+    {
+      "quote": "Сумка прийшла в ідеальному стані. Тканина, фурнітура, пропорції — все відчувається «дорогим» без крику.",
+      "name": "Maria K.",
+      "role": "Варшава"
+    },
+    {
+      "quote": "Доставка швидка, пакування спокійне. Повернення з відео розпакування пройшло без зайвих питань.",
+      "name": "Anastasiia R.",
+      "role": "Львів"
+    }
+  ],
+  "arrivalNotes": [
+    {
+      "label": "Новинка",
+      "title": "Кашемірове плаття-обгортка",
+      "body": "М'яка лінія для міжсезоння. Обмежена партія — вже в каталозі."
+    },
+    {
+      "label": "Оновлення",
+      "title": "Сумки Structured Shoulder",
+      "body": "Нові відтінки stone і cognac. Безкоштовна доставка по Україні."
+    },
+    {
+      "label": "Ательє",
+      "title": "Limited Atelier — друга серія",
+      "body": "Малі тиражі, ручна перевірка швів. Preforder відкрито на 10 днів."
+    }
+  ],
+  "collections": [
+    {
+      "slug": "capsule-essentials",
+      "name": "Капсульні основи",
+      "description": "Тихі форми, які повертаються щосезону. Вовна, шовк, шкіра — без шуму.",
+      "image": "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1400&q=80"
+    },
+    {
+      "slug": "evening-edit",
+      "name": "Вечірня редакція",
+      "description": "М'яке світло, атлас і стримана драма. Для вечорів, що не потребують доказів.",
+      "image": "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=1400&q=80"
+    },
+    {
+      "slug": "limited-atelier",
+      "name": "Обмежене ательє",
+      "description": "Малі тиражі й особливі матеріали. Речі, які не повторюються.",
+      "image": "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1400&q=80"
+    }
+  ]
+}

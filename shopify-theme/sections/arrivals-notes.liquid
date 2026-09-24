@@ -1,0 +1,59 @@
+<section class="arrivals">
+  <div class="page-gutter arrivals__grid">
+    <div class="fade-in">
+      <p class="eyebrow">{{ section.settings.eyebrow }}</p>
+      <h2 class="section-title font-heading">{{ section.settings.title }}</h2>
+      <p class="text-muted" style="margin-top:1.25rem;max-width:28rem;font-size:0.875rem;line-height:1.75;">{{ section.settings.subtitle }}</p>
+    </div>
+    <div class="fade-in" data-delay="1">
+      <div class="arrivals__list">
+        {% for block in section.blocks %}
+          <article class="arrivals__item" {{ block.shopify_attributes }}>
+            <p class="arrivals__label">{{ block.settings.label }}</p>
+            <div>
+              <h3 class="font-heading">{{ block.settings.title }}</h3>
+              <p>{{ block.settings.body }}</p>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+      {% if section.settings.cta_label != blank %}
+        <a class="link-underline" style="display:inline-block;margin-top:2rem;" href="{{ section.settings.cta_link | default: routes.all_products_collection_url }}">{{ section.settings.cta_label }}</a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Arrivals notes",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Оновлення магазину" },
+    { "type": "text", "id": "title", "label": "Title", "default": "Що з’явилось зараз" },
+    { "type": "textarea", "id": "subtitle", "label": "Subtitle", "default": "Короткі новини про нові надходження, відтінки та обмежені серії — без зайвого шуму." },
+    { "type": "text", "id": "cta_label", "label": "CTA", "default": "Дивитись новинки" },
+    { "type": "url", "id": "cta_link", "label": "CTA link" }
+  ],
+  "blocks": [
+    {
+      "type": "note",
+      "name": "Note",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label", "default": "New" },
+        { "type": "text", "id": "title", "label": "Title", "default": "Нова капсула" },
+        { "type": "textarea", "id": "body", "label": "Body", "default": "Спокійні силуети й теплі відтінки сезону." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Arrivals notes",
+      "blocks": [
+        { "type": "note", "settings": { "label": "01", "title": "Нові сумки", "body": "М'які форми та стримані фактури для щоденного ритму." } },
+        { "type": "note", "settings": { "label": "02", "title": "Кашемір", "body": "Легкі шари з акцентом на дотик тканини." } },
+        { "type": "note", "settings": { "label": "03", "title": "Обмежена серія", "body": "Невеликий тираж — без зайвого шуму." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

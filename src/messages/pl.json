@@ -1,0 +1,255 @@
+{
+  "brand": {
+    "name": "ＹＡＮÈＬＬＥ",
+    "tagline": "Cicha luksusowość. Czyste linie."
+  },
+  "nav": {
+    "shop": "Sklep",
+    "collections": "Kolekcje",
+    "lookbook": "Lookbook",
+    "about": "O marce",
+    "contact": "Kontakt",
+    "shipping": "Dostawa",
+    "search": "Szukaj",
+    "cart": "Koszyk",
+    "wishlist": "Ulubione",
+    "account": "Konto",
+    "admin": "Admin"
+  },
+  "home": {
+    "heroTitle": "Formy bez hałasu",
+    "heroSubtitle": "Odzież i akcesoria o powściągliwej elegancji — dla tych, którzy wybierają jakość ponad gest.",
+    "ctaShop": "Zobacz kolekcję",
+    "ctaLookbook": "Zobacz lookbook",
+    "featured": "Wyróżnione",
+    "newArrivals": "Nowości",
+    "collections": "Kolekcje",
+    "limited": "Edycja limitowana",
+    "arrivalsEyebrow": "Aktualizacje sklepu",
+    "arrivalsTitle": "Co właśnie weszło",
+    "arrivalsSubtitle": "Krótkie notatki o nowościach, odcieniach i seriach limitowanych — bez zbędnego hałasu.",
+    "arrivalsCta": "Zobacz nowości",
+    "journalEyebrow": "Dziennik mody",
+    "journalTitle": "Notatki o stylu",
+    "journalSubtitle": "Tkaniny, proporcje i spokojne rytuały ubierania — notatki redakcyjne domu ＹＡＮÈＬＬＥ.",
+    "testimonialsEyebrow": "Głosy",
+    "testimonialsTitle": "Opinie klientek",
+    "craftEyebrow": "Rzemiosło",
+    "craftTitle": "Szew, tkanina, czas",
+    "craftBody": "Każda rzecz przechodzi przez atelier: proporcja, dotyk materiału i trwałość. Mniej gestów — więcej precyzji.",
+    "craftCta": "O marce",
+    "newsletterTitle": "Listy bez zbędnego",
+    "newsletterSubtitle": "Rzadkie wiadomości o kolekcjach, atelier i cichych premierach.",
+    "newsletterCta": "Zapisz się",
+    "newsletterPlaceholder": "Twój email"
+  },
+  "catalog": {
+    "title": "Sklep",
+    "filters": "Filtry",
+    "category": "Kategoria",
+    "price": "Cena",
+    "color": "Kolor",
+    "size": "Rozmiar",
+    "material": "Materiał",
+    "sort": "Sortowanie",
+    "sortNewest": "Najnowsze",
+    "sortPriceAsc": "Cena: rosnąco",
+    "sortPriceDesc": "Cena: malejąco",
+    "clear": "Wyczyść",
+    "results": "Znaleziono: {count}",
+    "noResults": "Brak wyników. Spróbuj zmienić filtry.",
+    "new": "Nowość",
+    "sale": "Wyprzedaż",
+    "limited": "Limitowane"
+  },
+  "product": {
+    "addToCart": "Dodaj do koszyka",
+    "addToWishlist": "Dodaj do ulubionych",
+    "size": "Rozmiar",
+    "color": "Kolor",
+    "quantity": "Ilość",
+    "inStock": "Dostępny",
+    "outOfStock": "Niedostępny",
+    "sizeGuide": "Tabela rozmiarów",
+    "materials": "Skład",
+    "care": "Pielęgnacja",
+    "shipping": "Dostawa",
+    "description": "Opis",
+    "related": "Może Ci się spodobać"
+  },
+  "cart": {
+    "title": "Koszyk",
+    "empty": "Twój koszyk jest pusty.",
+    "continue": "Kontynuuj zakupy",
+    "checkout": "Do kasy",
+    "subtotal": "Suma częściowa",
+    "remove": "Usuń",
+    "freeShipping": "Darmowa dostawa przy każdym zamówieniu"
+  },
+  "checkout": {
+    "title": "Zamówienie",
+    "contact": "Kontakt",
+    "shipping": "Dostawa",
+    "payment": "Płatność",
+    "novaPoshta": "Nova Poshta",
+    "novaPoshtaHint": "Dostawa do oddziału lub paczkomatu Nova Poshta na terenie Ukrainy. Bezpłatnie.",
+    "novaPoshtaBranch": "Oddział / paczkomat Nova Poshta",
+    "novaPoshtaBranchPlaceholder": "np. oddział nr 12, ul. Chreszczatyk 22",
+    "payOnline": "Płatność kartą online",
+    "payOnlineHint": "Bramka kartowa zostanie podłączona później. Zamówienie zapisze się jako demo.",
+    "payCod": "Płatność przy odbiorze",
+    "payCodHint": "Płatność przy odbiorze w oddziale Nova Poshta. Opłaty przewoźnika płaci odbiorca według taryf NP.",
+    "placeOrder": "Złóż zamówienie",
+    "placing": "Składanie zamówienia…",
+    "name": "Imię i nazwisko",
+    "firstName": "Imię",
+    "lastName": "Nazwisko",
+    "email": "Email",
+    "phone": "Telefon",
+    "city": "Miasto",
+    "address": "Adres / punkt odbioru",
+    "postalCode": "Kod pocztowy",
+    "notes": "Uwagi do zamówienia",
+    "notesPlaceholder": "Preferowana godzina kontaktu, szczegóły oddziału itd.",
+    "orderSummary": "Podsumowanie",
+    "total": "Razem",
+    "freeShipping": "Darmowa dostawa Nova Poshta",
+    "emptyBag": "Koszyk jest pusty.",
+    "submitError": "Nie udało się złożyć zamówienia. Spróbuj ponownie."
+  },
+  "order": {
+    "successTitle": "Dziękujemy",
+    "successBody": "Zamówienie zostało przyjęte. Wyślemy potwierdzenie na email i skontaktujemy się w sprawie dostawy.",
+    "orderNumber": "Numer zamówienia",
+    "backHome": "Strona główna"
+  },
+  "about": {
+    "eyebrow": "Nasz dom",
+    "title": "O marce",
+    "body": "ＹＡＮÈＬＬＥ powstało z cichą intencją — wobec formy, materiału i przestrzeni między nimi. Tworzymy damską odzież i akcesoria średniego luksusu bez zbędnego gestu, z szacunkiem dla sylwetki i czasu. Założycielka marki budowała ten język jako kapsułę spokoju: mniej hałasu, więcej jasności. Każda rzecz przechodzi przez atelier, gdzie liczą się proporcja, dotyk tkaniny i trwałość."
+  },
+  "shipping": {
+    "title": "Dostawa i zwroty",
+    "delivery": "Wysyłamy na Ukrainie przez Nova Poshta do oddziałów lub paczkomatów. Płatność przy odbiorze lub kartą online. Wysyłka międzynarodowa na życzenie.",
+    "complimentary": "Darmowa dostawa Nova Poshta przy każdym zamówieniu.",
+    "returns": "Zwrot w ciągu 14 dni przy zachowaniu metek, opakowania i stanu towaru.",
+    "returnsVideo": "Przy płatnościach kartą zwrot jest możliwy wyłącznie z nieedytowanym wideo rozpakowania paczki."
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Napisz do nas — odpowiadamy spokojnie i rzeczowo.",
+    "whatsapp": "WhatsApp",
+    "telegram": "Telegram",
+    "instagram": "Instagram",
+    "email": "Email"
+  },
+  "wishlist": {
+    "title": "Ulubione",
+    "empty": "Lista ulubionych jest pusta."
+  },
+  "footer": {
+    "rights": "© {year} ＹＡＮÈＬＬＥ. Wszelkie prawa zastrzeżone.",
+    "newsletter": "Newsletter",
+    "policies": "Polityki",
+    "offer": "Regulamin",
+    "terms": "Warunki korzystania",
+    "privacy": "Prywatność",
+    "cookies": "Pliki cookie"
+  },
+  "legal": {
+    "eyebrow": "Informacje prawne",
+    "updated": "Zaktualizowano {date}",
+    "terms": {
+      "title": "Warunki korzystania",
+      "updated": "25 sierpnia 2026",
+      "intro": "Niniejsze warunki regulują dostęp do strony ＹＡＮÈＬＬＥ, składanie zamówień i korzystanie z naszych usług.",
+      "sections": [
+        {
+          "title": "Postanowienia ogólne",
+          "body": "Korzystając ze strony, potwierdzasz zapoznanie się z tymi warunkami i ich akceptację. Jeśli się nie zgadzasz — nie korzystaj ze strony."
+        },
+        {
+          "title": "Zamówienia i płatność",
+          "body": "Zamówienia składane są przez koszyk. Główna dostawa — Nova Poshta. Płatność przy odbiorze lub online (gdy bramka będzie dostępna).\n\nMożemy skontaktować się w celu potwierdzenia zamówienia. ＹＡＮÈＬＬＥ może odmówić realizacji w przypadku błędu ceny, braku towaru lub podejrzenia oszustwa."
+        },
+        {
+          "title": "Dostawa i zwroty",
+          "body": "Warunki dostawy i zwrotów opisano na stronie Dostawa. Zwrot w ciągu 14 dni przy zachowaniu metek, opakowania i stanu. Przy płatności kartą może być wymagane wideo rozpakowania."
+        },
+        {
+          "title": "Własność intelektualna",
+          "body": "Materiały strony (teksty, zdjęcia, design, logo) należą do ＹＡＮÈＬＬＥ lub są używane na podstawie licencji. Kopiowanie bez pisemnej zgody jest zabronione."
+        },
+        {
+          "title": "Kontakt",
+          "body": "Pytania dotyczące warunków: hello@yanelle.com"
+        }
+      ]
+    },
+    "privacy": {
+      "title": "Polityka prywatności",
+      "updated": "25 sierpnia 2026",
+      "intro": "Szanujemy prywatność i przetwarzamy dane osobowe wyłącznie w celu realizacji zamówień i ulepszania serwisu.",
+      "sections": [
+        {
+          "title": "Jakie dane zbieramy",
+          "body": "Imię, telefon, email, miasto, oddział / adres Nova Poshta, treść zamówienia oraz dane techniczne (cookie, urządzenie, język) w zakresie potrzebnym do działania strony."
+        },
+        {
+          "title": "Jak wykorzystujemy dane",
+          "body": "Do realizacji i dostawy zamówień, kontaktu, wsparcia, analityki (jeśli włączona) oraz wymogów prawa."
+        },
+        {
+          "title": "Udostępnianie osobom trzecim",
+          "body": "Dane mogą być przekazywane przewoźnikowi (Nova Poshta) i dostawcom płatności wyłącznie w zakresie niezbędnym. Nie sprzedajemy danych osobowych."
+        },
+        {
+          "title": "Twoje prawa",
+          "body": "Możesz żądać dostępu, poprawienia lub usunięcia danych: hello@yanelle.com. Część danych przechowujemy zgodnie z wymogami księgowymi i prawnymi."
+        }
+      ]
+    },
+    "cookies": {
+      "title": "Polityka cookie",
+      "updated": "25 sierpnia 2026",
+      "intro": "ＹＡＮÈＬＬＥ używa plików cookie i podobnych technologii, aby zapamiętać ustawienia i zapewnić działanie serwisu.",
+      "sections": [
+        {
+          "title": "Czym są cookie",
+          "body": "Cookie to małe pliki w przeglądarce. Pomagają zapamiętać język, walutę, zawartość koszyka i inne ustawienia sesji."
+        },
+        {
+          "title": "Jakie cookie stosujemy",
+          "body": "Niezbędne — koszyk, kasa, podstawowe ustawienia.\nFunkcjonalne — język, waluta, ulubione.\nAnalityczne — gdy włączone, aby zrozumieć korzystanie ze strony (bez sprzedaży danych)."
+        },
+        {
+          "title": "Zarządzanie cookie",
+          "body": "Możesz ograniczyć lub usunąć cookie w ustawieniach przeglądarki. Wyłączenie niezbędnych cookie może wpłynąć na koszyk i zamówienie."
+        },
+        {
+          "title": "Kontakt",
+          "body": "Pytania o cookie: hello@yanelle.com"
+        }
+      ]
+    }
+  },
+  "common": {
+    "currency": "Waluta",
+    "language": "Język",
+    "loading": "Ładowanie…",
+    "close": "Zamknij",
+    "save": "Zapisz",
+    "searchPlaceholder": "Szukaj rzeczy…"
+  },
+  "admin": {
+    "title": "Panel admina",
+    "products": "Produkty",
+    "orders": "Zamówienia",
+    "promos": "Promocje",
+    "collections": "Kolekcje",
+    "logout": "Wyloguj",
+    "addProduct": "Dodaj produkt",
+    "stock": "Stan",
+    "price": "Cena"
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "layout": "lookbook",
+        "lookbook_eyebrow": "Editorial 01",
+        "lookbook_subtitle": "12 looks · quiet proportion · soft structure"
+      },
+      "blocks": {
+        "l1": {
+          "type": "look",
+          "settings": {
+            "caption": "Ранкове світло",
+            "image_url": "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1400&q=80",
+            "wide": false
+          }
+        },
+        "l2": {
+          "type": "look",
+          "settings": {
+            "caption": "Міський спокій",
+            "image_url": "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1400&q=80",
+            "wide": true
+          }
+        },
+        "l3": {
+          "type": "look",
+          "settings": {
+            "caption": "М'яка структура",
+            "image_url": "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1400&q=80",
+            "wide": false
+          }
+        },
+        "l4": {
+          "type": "look",
+          "settings": {
+            "caption": "Вечірня лінія",
+            "image_url": "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=1400&q=80",
+            "wide": false
+          }
+        },
+        "l5": {
+          "type": "look",
+          "settings": {
+            "caption": "Година галереї",
+            "image_url": "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1400&q=80",
+            "wide": true
+          }
+        },
+        "l6": {
+          "type": "look",
+          "settings": {
+            "caption": "Тиша ательє",
+            "image_url": "https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=1400&q=80",
+            "wide": false
+          }
+        },
+        "l7": {
+          "type": "look",
+          "settings": {
+            "caption": "Година льону",
+            "image_url": "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1600&q=80",
+            "wide": false
+          }
+        },
+        "l8": {
+          "type": "look",
+          "settings": {
+            "caption": "Камінь і шовк",
+            "image_url": "https://images.unsplash.com/photo-1529139576470-58578d8c0c2a?auto=format&fit=crop&w=1400&q=80",
+            "wide": true
+          }
+        },
+        "l9": {
+          "type": "look",
+          "settings": {
+            "caption": "Вікенд-едіт",
+            "image_url": "https://images.unsplash.com/photo-1487222477894-8943e31effd6?auto=format&fit=crop&w=1400&q=80",
+            "wide": false
+          }
+        },
+        "l10": {
+          "type": "look",
+          "settings": {
+            "caption": "Рамка зі слонової кістки",
+            "image_url": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1400&q=80",
+            "wide": false
+          }
+        },
+        "l11": {
+          "type": "look",
+          "settings": {
+            "caption": "Погода для пальта",
+            "image_url": "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1400&q=80",
+            "wide": true
+          }
+        },
+        "l12": {
+          "type": "look",
+          "settings": {
+            "caption": "Тиха вечеря",
+            "image_url": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1600&q=80",
+            "wide": false
+          }
+        }
+      },
+      "block_order": ["l1", "l2", "l3", "l4", "l5", "l6", "l7", "l8", "l9", "l10", "l11", "l12"]
+    }
+  },
+  "order": ["main"]
+}

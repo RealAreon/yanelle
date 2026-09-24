@@ -1,0 +1,255 @@
+{
+  "brand": {
+    "name": "ＹＡＮÈＬＬＥ",
+    "tagline": "Ruhiger Luxus. Klare Linien."
+  },
+  "nav": {
+    "shop": "Shop",
+    "collections": "Kollektionen",
+    "lookbook": "Lookbook",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "shipping": "Versand",
+    "search": "Suche",
+    "cart": "Warenkorb",
+    "wishlist": "Wunschliste",
+    "account": "Konto",
+    "admin": "Admin"
+  },
+  "home": {
+    "heroTitle": "Formen ohne Lärm",
+    "heroSubtitle": "Kleidung und Accessoires von zurückhaltender Eleganz — für alle, die Qualität dem Gestus vorziehen.",
+    "ctaShop": "Kollektion entdecken",
+    "ctaLookbook": "Lookbook ansehen",
+    "featured": "Ausgewählt",
+    "newArrivals": "Neuheiten",
+    "collections": "Kollektionen",
+    "limited": "Limitierte Edition",
+    "arrivalsEyebrow": "Shop-Updates",
+    "arrivalsTitle": "Gerade eingetroffen",
+    "arrivalsSubtitle": "Kurze Notizen zu Neuheiten, Tönen und limitierten Serien — ohne unnötigen Lärm.",
+    "arrivalsCta": "Neuheiten ansehen",
+    "journalEyebrow": "Modejournal",
+    "journalTitle": "Notizen zum Stil",
+    "journalSubtitle": "Stoffe, Proportion und ruhige Anziehrituale — redaktionelle Notizen des Hauses ＹＡＮÈＬＬＥ.",
+    "testimonialsEyebrow": "Stimmen",
+    "testimonialsTitle": "Kundenstimmen",
+    "craftEyebrow": "Handwerk",
+    "craftTitle": "Naht, Stoff, Zeit",
+    "craftBody": "Jedes Stück geht durchs Atelier: Proportion, Griff und Langlebigkeit. Weniger Gesten — mehr Präzision.",
+    "craftCta": "Über die Marke",
+    "newsletterTitle": "Briefe ohne Überfluss",
+    "newsletterSubtitle": "Seltene Nachrichten zu Kollektionen, Atelier und ruhigen Premieren.",
+    "newsletterCta": "Abonnieren",
+    "newsletterPlaceholder": "Ihre E-Mail"
+  },
+  "catalog": {
+    "title": "Shop",
+    "filters": "Filter",
+    "category": "Kategorie",
+    "price": "Preis",
+    "color": "Farbe",
+    "size": "Größe",
+    "material": "Material",
+    "sort": "Sortierung",
+    "sortNewest": "Neueste zuerst",
+    "sortPriceAsc": "Preis: aufsteigend",
+    "sortPriceDesc": "Preis: absteigend",
+    "clear": "Zurücksetzen",
+    "results": "{count} Ergebnisse",
+    "noResults": "Keine Ergebnisse. Bitte Filter anpassen.",
+    "new": "Neu",
+    "sale": "Sale",
+    "limited": "Limitiert"
+  },
+  "product": {
+    "addToCart": "In den Warenkorb",
+    "addToWishlist": "Zur Wunschliste",
+    "size": "Größe",
+    "color": "Farbe",
+    "quantity": "Menge",
+    "inStock": "Auf Lager",
+    "outOfStock": "Nicht verfügbar",
+    "sizeGuide": "Größentabelle",
+    "materials": "Materialien",
+    "care": "Pflege",
+    "shipping": "Versand",
+    "description": "Beschreibung",
+    "related": "Das könnte Ihnen gefallen"
+  },
+  "cart": {
+    "title": "Warenkorb",
+    "empty": "Ihr Warenkorb ist leer.",
+    "continue": "Weiter einkaufen",
+    "checkout": "Zur Kasse",
+    "subtotal": "Zwischensumme",
+    "remove": "Entfernen",
+    "freeShipping": "Kostenloser Versand für jede Bestellung"
+  },
+  "checkout": {
+    "title": "Kasse",
+    "contact": "Kontakt",
+    "shipping": "Versand",
+    "payment": "Zahlung",
+    "novaPoshta": "Nova Poshta",
+    "novaPoshtaHint": "Lieferung an eine Nova-Poshta-Filiale oder ein Paketfach in der Ukraine. Kostenlos.",
+    "novaPoshtaBranch": "Nova-Poshta-Filiale / Paketfach",
+    "novaPoshtaBranchPlaceholder": "z. B. Filiale Nr. 12, Chreschtschatyk 22",
+    "payOnline": "Online mit Karte zahlen",
+    "payOnlineHint": "Kartenzahlung folgt später. Die Bestellung wird als Demo gespeichert.",
+    "payCod": "Zahlung bei Lieferung",
+    "payCodHint": "Zahlung bei Abholung in der Nova-Poshta-Filiale. Transporteurgebühren zahlt der Empfänger.",
+    "placeOrder": "Bestellung aufgeben",
+    "placing": "Wird aufgegeben…",
+    "name": "Vollständiger Name",
+    "firstName": "Vorname",
+    "lastName": "Nachname",
+    "email": "E-Mail",
+    "phone": "Telefon",
+    "city": "Stadt",
+    "address": "Adresse / Abholpunkt",
+    "postalCode": "Postleitzahl",
+    "notes": "Anmerkungen",
+    "notesPlaceholder": "Bevorzugte Anrufzeit, Filialdetails usw.",
+    "orderSummary": "Bestellübersicht",
+    "total": "Summe",
+    "freeShipping": "Kostenloser Versand mit Nova Poshta",
+    "emptyBag": "Ihre Tasche ist leer.",
+    "submitError": "Bestellung konnte nicht gesendet werden. Bitte erneut versuchen."
+  },
+  "order": {
+    "successTitle": "Danke",
+    "successBody": "Ihre Bestellung ist eingegangen. Wir senden eine Bestätigung per E-Mail und melden uns zur Lieferung.",
+    "orderNumber": "Bestellnummer",
+    "backHome": "Zur Startseite"
+  },
+  "about": {
+    "eyebrow": "Unser Haus",
+    "title": "Über die Marke",
+    "body": "ＹＡＮÈＬＬＥ entstand mit ruhiger Absicht — für Form, Material und den Raum dazwischen. Wir gestalten Dammode und Accessoires im mittleren Luxussegment ohne überflüssigen Gestus, mit Respekt für Silhouette und Zeit. Die Gründerin formte diese Sprache als Kapsel der Ruhe: weniger Lärm, mehr Klarheit. Jedes Stück geht durch das Atelier, wo Proportion, Stoffgefühl und Langlebigkeit zählen."
+  },
+  "shipping": {
+    "title": "Versand & Rückgabe",
+    "delivery": "Versand in der Ukraine mit Nova Poshta an Filialen oder Paketfächer. Zahlung bei Lieferung oder online per Karte. International auf Anfrage.",
+    "complimentary": "Kostenloser Nova-Poshta-Versand für jede Bestellung.",
+    "returns": "Rückgabe innerhalb von 14 Tagen bei erhaltenen Etiketten, Verpackung und einwandfreiem Zustand.",
+    "returnsVideo": "Bei Kartenzahlungen werden Rücksendungen nur mit einem ungeschnittenen Auspackvideo der Sendung akzeptiert."
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Schreiben Sie uns — wir antworten ruhig und klar.",
+    "whatsapp": "WhatsApp",
+    "telegram": "Telegram",
+    "instagram": "Instagram",
+    "email": "E-Mail"
+  },
+  "wishlist": {
+    "title": "Wunschliste",
+    "empty": "Ihre Wunschliste ist leer."
+  },
+  "footer": {
+    "rights": "© {year} ＹＡＮÈＬＬＥ. Alle Rechte vorbehalten.",
+    "newsletter": "Newsletter",
+    "policies": "Richtlinien",
+    "offer": "Verkaufsbedingungen",
+    "terms": "Nutzungsbedingungen",
+    "privacy": "Datenschutz",
+    "cookies": "Cookies"
+  },
+  "legal": {
+    "eyebrow": "Rechtliches",
+    "updated": "Aktualisiert {date}",
+    "terms": {
+      "title": "Nutzungsbedingungen",
+      "updated": "25. August 2026",
+      "intro": "Diese Nutzungsbedingungen regeln den Zugang zur Website ＹＡＮÈＬＬＥ, Bestellungen und die Nutzung unseres Services.",
+      "sections": [
+        {
+          "title": "Allgemeines",
+          "body": "Mit der Nutzung der Website bestätigen Sie, diese Bedingungen gelesen und akzeptiert zu haben. Andernfalls nutzen Sie die Website bitte nicht."
+        },
+        {
+          "title": "Bestellung und Zahlung",
+          "body": "Bestellungen erfolgen über den Warenkorb. Hauptversand: Nova Poshta. Zahlung bei Lieferung oder online, sobald das Gateway verbunden ist.\n\nWir können Sie zur Bestätigung kontaktieren. ＹＡＮÈＬＬＥ kann Bestellungen bei Preisfehlern, Lagerproblemen oder Betrugsverdacht ablehnen."
+        },
+        {
+          "title": "Versand und Rückgabe",
+          "body": "Details auf der Versandseite. Rückgabe innerhalb von 14 Tagen bei erhaltenen Etiketten, Verpackung und Zustand. Bei Kartenzahlung ggf. Auspackvideo erforderlich."
+        },
+        {
+          "title": "Geistiges Eigentum",
+          "body": "Alle Website-Inhalte gehören ＹＡＮÈＬＬＥ oder werden lizenziert genutzt. Kopieren ohne schriftliche Zustimmung ist untersagt."
+        },
+        {
+          "title": "Kontakt",
+          "body": "Fragen: hello@yanelle.com"
+        }
+      ]
+    },
+    "privacy": {
+      "title": "Datenschutzerklärung",
+      "updated": "25. August 2026",
+      "intro": "Wir respektieren Ihre Privatsphäre und verarbeiten personenbezogene Daten nur zur Auftragserfüllung und Serviceverbesserung.",
+      "sections": [
+        {
+          "title": "Welche Daten wir erheben",
+          "body": "Name, Telefon, E-Mail, Stadt, Nova-Poshta-Filiale / Adresse, Bestellinhalt sowie technische Daten (Cookies, Gerät, Sprache) soweit für den Betrieb nötig."
+        },
+        {
+          "title": "Verwendung",
+          "body": "Zur Bearbeitung und Lieferung, Kontakt, Support, Analyse (falls aktiv) und gesetzlichen Pflichten."
+        },
+        {
+          "title": "Weitergabe",
+          "body": "Daten können an den Versanddienst (Nova Poshta) und Zahlungsanbieter nur soweit nötig weitergegeben werden. Wir verkaufen keine personenbezogenen Daten."
+        },
+        {
+          "title": "Ihre Rechte",
+          "body": "Auskunft, Korrektur oder Löschung: hello@yanelle.com. Manche Daten werden für Buchhaltung und Gesetz aufbewahrt."
+        }
+      ]
+    },
+    "cookies": {
+      "title": "Cookie-Richtlinie",
+      "updated": "25. August 2026",
+      "intro": "ＹＡＮÈＬＬＥ verwendet Cookies, um Einstellungen zu speichern und den Service korrekt zu betreiben.",
+      "sections": [
+        {
+          "title": "Was sind Cookies",
+          "body": "Kleine Dateien im Browser. Sie speichern Sprache, Währung, Warenkorb und Sitzungseinstellungen."
+        },
+        {
+          "title": "Welche Cookies wir nutzen",
+          "body": "Essenziell — Warenkorb, Kasse, Grundeinstellungen.\nFunktional — Sprache, Währung, Wunschliste.\nAnalytisch — falls aktiv, zur Nutzungsmessung (ohne Datenverkauf)."
+        },
+        {
+          "title": "Verwaltung",
+          "body": "Sie können Cookies im Browser einschränken oder löschen. Das Deaktivieren essenzieller Cookies kann Warenkorb und Checkout beeinträchtigen."
+        },
+        {
+          "title": "Kontakt",
+          "body": "Cookie-Fragen: hello@yanelle.com"
+        }
+      ]
+    }
+  },
+  "common": {
+    "currency": "Währung",
+    "language": "Sprache",
+    "loading": "Laden…",
+    "close": "Schließen",
+    "save": "Speichern",
+    "searchPlaceholder": "Stücke suchen…"
+  },
+  "admin": {
+    "title": "Admin",
+    "products": "Produkte",
+    "orders": "Bestellungen",
+    "promos": "Aktionen",
+    "collections": "Kollektionen",
+    "logout": "Abmelden",
+    "addProduct": "Produkt hinzufügen",
+    "stock": "Bestand",
+    "price": "Preis"
+  }
+}

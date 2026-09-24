@@ -1,0 +1,57 @@
+<section class="collection-banners">
+  {% for block in section.blocks %}
+    {% assign col = collections[block.settings.collection] %}
+    <a
+      class="collection-banner"
+      href="{{ col.url | default: block.settings.link | default: routes.collections_url }}"
+      {{ block.shopify_attributes }}
+    >
+      {% if block.settings.image != blank %}
+        {{ block.settings.image | image_url: width: 1200 | image_tag: loading: 'lazy' }}
+      {% elsif block.settings.image_url != blank %}
+        <img src="{{ block.settings.image_url }}" alt="" loading="lazy" width="1200" height="1500">
+      {% elsif col.featured_image %}
+        {{ col.featured_image | image_url: width: 1200 | image_tag: loading: 'lazy' }}
+      {% else %}
+        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=80" alt="" loading="lazy" width="1200" height="1500">
+      {% endif %}
+      <div class="collection-banner__shade"></div>
+      <div class="collection-banner__text">
+        <h3 class="font-heading">{{ block.settings.title | default: col.title | default: 'Collection' }}</h3>
+        <span class="collection-banner__cta">{{ section.settings.cta_label }}</span>
+      </div>
+    </a>
+  {% endfor %}
+</section>
+
+{% schema %}
+{
+  "name": "Collection banners",
+  "settings": [
+    { "type": "text", "id": "cta_label", "label": "CTA label", "default": "Колекції" }
+  ],
+  "blocks": [
+    {
+      "type": "banner",
+      "name": "Banner",
+      "settings": [
+        { "type": "collection", "id": "collection", "label": "Collection" },
+        { "type": "image_picker", "id": "image", "label": "Image override" },
+        { "type": "text", "id": "image_url", "label": "Image URL (fallback)" },
+        { "type": "text", "id": "title", "label": "Title override" },
+        { "type": "url", "id": "link", "label": "Link override" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection banners",
+      "blocks": [
+        { "type": "banner", "settings": { "title": "Bags" } },
+        { "type": "banner", "settings": { "title": "Ready-to-wear" } },
+        { "type": "banner", "settings": { "title": "Accessories" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,50 @@
+<section class="section page-gutter">
+  <div class="fade-in">
+    <div style="text-align:center;margin-bottom:3rem;">
+      <p class="eyebrow">{{ section.settings.eyebrow }}</p>
+      <h2 class="section-title font-heading">{{ section.settings.title }}</h2>
+    </div>
+    <div class="testimonials-grid">
+      {% for block in section.blocks %}
+        <blockquote class="testimonial" {{ block.shopify_attributes }}>
+          <p class="font-heading">“{{ block.settings.quote }}”</p>
+          <footer>
+            <cite>{{ block.settings.name }}</cite>
+            <p class="role">{{ block.settings.role }}</p>
+          </footer>
+        </blockquote>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Testimonials",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Відгуки" },
+    { "type": "text", "id": "title", "label": "Title", "default": "Слова клієнток" }
+  ],
+  "blocks": [
+    {
+      "type": "quote",
+      "name": "Quote",
+      "settings": [
+        { "type": "textarea", "id": "quote", "label": "Quote", "default": "Тиха розкіш у кожній деталі." },
+        { "type": "text", "id": "name", "label": "Name", "default": "Yana" },
+        { "type": "text", "id": "role", "label": "Role", "default": "Kyiv" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonials",
+      "blocks": [
+        { "type": "quote", "settings": { "quote": "Речі, які тримають форму й спокій.", "name": "Olena", "role": "Kyiv" } },
+        { "type": "quote", "settings": { "quote": "Нічого зайвого — лише точний силует.", "name": "Maria", "role": "Lviv" } },
+        { "type": "quote", "settings": { "quote": "Якість, яку відчуваєш одразу.", "name": "Iryna", "role": "Odesa" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

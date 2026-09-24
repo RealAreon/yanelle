@@ -1,0 +1,19 @@
+{
+  "current": {
+    "color_background": "#f7f0e6",
+    "color_ink": "#2d1b17",
+    "color_champagne": "#d4af74",
+    "color_header": "#e8dccb",
+    "color_secondary": "#fde3a7",
+    "color_mist": "#bdd4e7",
+    "social_email": "hello@yanelle.com",
+    "social_instagram": "https://instagram.com/yanelle",
+    "social_facebook": "https://facebook.com/yanelle",
+    "social_pinterest": "https://pinterest.com/yanelle",
+    "social_telegram": "https://t.me/yanelle",
+    "social_whatsapp": "https://wa.me/380000000000",
+    "featured_collection": "featured",
+    "limited_collection": "limited",
+    "new_collection": "new"
+  }
+}
