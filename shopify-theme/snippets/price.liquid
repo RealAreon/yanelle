@@ -1,7 +1,0 @@
-{% comment %} Renders product price {% endcomment %}
-{% if product.compare_at_price > product.price %}
-  <span class="price">{{ product.price | money }}</span>
-  <span class="price price--compare">{{ product.compare_at_price | money }}</span>
-{% else %}
-  <span class="price">{{ product.price | money }}</span>
-{% endif %}
