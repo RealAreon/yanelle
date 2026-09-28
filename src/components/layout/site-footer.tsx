@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import { toast } from "sonner";
 import { Link } from "@/i18n/navigation";
+import { useCookieConsent } from "@/store/cookie-consent";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
@@ -56,6 +57,8 @@ export function SiteFooter() {
   const nav = useTranslations("nav");
   const home = useTranslations("home");
   const footer = useTranslations("footer");
+  const cookieBanner = useTranslations("cookieBanner");
+  const openCookiePanel = useCookieConsent((s) => s.openPanel);
 
   return (
     <footer id="footer" className="border-t bg-secondary/40">
@@ -158,6 +161,13 @@ export function SiteFooter() {
           <Link href="/cookies" className="hover:text-champagne">
             {footer("cookies")}
           </Link>
+          <button
+            type="button"
+            onClick={() => openCookiePanel()}
+            className="cursor-pointer hover:text-champagne"
+          >
+            {cookieBanner("manage")}
+          </button>
         </div>
       </div>
     </footer>

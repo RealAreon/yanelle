@@ -244,6 +244,24 @@
       ]
     }
   },
+  "cookieBanner": {
+    "title": "Cookies",
+    "description": "Usamos cookies esenciales para la bolsa y el pago, y opcionales para preferencias y analítica. Elige qué permitir: tu elección se guarda y se aplica.",
+    "policyLink": "Política de cookies",
+    "acceptAll": "Permitir todas",
+    "reject": "Solo esenciales",
+    "customize": "Personalizar",
+    "savePreferences": "Guardar elección",
+    "back": "Atrás",
+    "manage": "Ajustes de cookies",
+    "alwaysOn": "Siempre activas",
+    "necessaryTitle": "Esenciales",
+    "necessaryBody": "Bolsa, checkout, seguridad. Necesarias para la tienda.",
+    "functionalTitle": "Preferencias",
+    "functionalBody": "Recuerdan moneda y ajustes similares entre visitas.",
+    "analyticsTitle": "Analítica",
+    "analyticsBody": "Ayudan a entender el tráfico. Sin anuncios; no vendemos datos."
+  },
   "common": {
     "currency": "Moneda",
     "language": "Idioma",

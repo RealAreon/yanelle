@@ -244,6 +244,24 @@
       ]
     }
   },
+  "cookieBanner": {
+    "title": "Pliki cookie",
+    "description": "Używamy niezbędnych cookie do koszyka i zamówienia oraz opcjonalnych do preferencji i analityki. Wybierz, na co pozwalasz — wybór jest zapisywany i stosowany.",
+    "policyLink": "Polityka cookie",
+    "acceptAll": "Zezwól na wszystkie",
+    "reject": "Tylko niezbędne",
+    "customize": "Dostosuj",
+    "savePreferences": "Zapisz wybór",
+    "back": "Wstecz",
+    "manage": "Ustawienia cookie",
+    "alwaysOn": "Zawsze włączone",
+    "necessaryTitle": "Niezbędne",
+    "necessaryBody": "Koszyk, checkout, bezpieczeństwo. Wymagane do działania sklepu.",
+    "functionalTitle": "Preferencje",
+    "functionalBody": "Zapamiętują walutę i podobne ustawienia między wizytami.",
+    "analyticsTitle": "Analityka",
+    "analyticsBody": "Pomagają zrozumieć ruch. Bez reklam, danych nie sprzedajemy."
+  },
   "common": {
     "currency": "Waluta",
     "language": "Język",

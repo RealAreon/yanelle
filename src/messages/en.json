@@ -244,6 +244,24 @@
       ]
     }
   },
+  "cookieBanner": {
+    "title": "Cookies",
+    "description": "We use essential cookies for the bag and checkout, and optional cookies for preferences and analytics. Choose what you allow — your choice is saved and applied.",
+    "policyLink": "Cookie policy",
+    "acceptAll": "Allow all",
+    "reject": "Essential only",
+    "customize": "Customize",
+    "savePreferences": "Save choices",
+    "back": "Back",
+    "manage": "Cookie settings",
+    "alwaysOn": "Always on",
+    "necessaryTitle": "Essential",
+    "necessaryBody": "Bag, checkout, security. Required for the shop to work.",
+    "functionalTitle": "Preferences",
+    "functionalBody": "Remember currency and similar settings between visits.",
+    "analyticsTitle": "Analytics",
+    "analyticsBody": "Help us understand traffic. No ads, data not sold."
+  },
   "common": {
     "currency": "Currency",
     "language": "Language",

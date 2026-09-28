@@ -8,6 +8,8 @@ import { PageTransition } from "@/components/layout/page-transition";
 import { CartDrawer } from "@/components/store/cart-drawer";
 import { CatalogStoreSync } from "@/components/store/catalog-store-sync";
 import { FlyToCartLayer } from "@/components/store/fly-to-cart";
+import { AnalyticsScripts } from "@/components/legal/analytics-scripts";
+import { CookieBanner } from "@/components/legal/cookie-banner";
 import { Toaster } from "@/components/ui/sonner";
 import { getCatalogProducts } from "@/lib/shopify";
 
@@ -42,6 +44,8 @@ export default async function LocaleLayout({ children, params }: Props) {
         <SiteFooter />
         <CartDrawer />
         <FlyToCartLayer />
+        <CookieBanner />
+        <AnalyticsScripts />
         <Toaster />
       </div>
     </NextIntlClientProvider>

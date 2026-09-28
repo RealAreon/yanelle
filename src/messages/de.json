@@ -244,6 +244,24 @@
       ]
     }
   },
+  "cookieBanner": {
+    "title": "Cookies",
+    "description": "Wir nutzen notwendige Cookies für Warenkorb und Checkout sowie optionale für Einstellungen und Analyse. Wählen Sie, was Sie erlauben — Ihre Wahl wird gespeichert und angewendet.",
+    "policyLink": "Cookie-Richtlinie",
+    "acceptAll": "Alle erlauben",
+    "reject": "Nur notwendige",
+    "customize": "Anpassen",
+    "savePreferences": "Auswahl speichern",
+    "back": "Zurück",
+    "manage": "Cookie-Einstellungen",
+    "alwaysOn": "Immer aktiv",
+    "necessaryTitle": "Notwendig",
+    "necessaryBody": "Warenkorb, Checkout, Sicherheit. Für den Shop erforderlich.",
+    "functionalTitle": "Einstellungen",
+    "functionalBody": "Merken Währung und ähnliche Optionen zwischen Besuchen.",
+    "analyticsTitle": "Analyse",
+    "analyticsBody": "Helfen, den Traffic zu verstehen. Keine Werbung, kein Datenverkauf."
+  },
   "common": {
     "currency": "Währung",
     "language": "Sprache",
