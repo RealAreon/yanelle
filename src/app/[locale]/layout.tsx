@@ -6,8 +6,10 @@ import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { PageTransition } from "@/components/layout/page-transition";
 import { CartDrawer } from "@/components/store/cart-drawer";
+import { CatalogStoreSync } from "@/components/store/catalog-store-sync";
 import { FlyToCartLayer } from "@/components/store/fly-to-cart";
 import { Toaster } from "@/components/ui/sonner";
+import { getCatalogProducts } from "@/lib/shopify";
 
 type Props = {
   children: React.ReactNode;
@@ -23,11 +25,16 @@ export default async function LocaleLayout({ children, params }: Props) {
   if (!hasLocale(routing.locales, locale)) notFound();
 
   setRequestLocale(locale);
-  const messages = await getMessages();
+  const [messages, products] = await Promise.all([
+    getMessages(),
+    getCatalogProducts(),
+  ]);
+  const productIds = products.map((product) => product.id);
 
   return (
     <NextIntlClientProvider messages={messages}>
       <div className="flex min-h-screen flex-col bg-background text-foreground">
+        <CatalogStoreSync productIds={productIds} />
         <SiteHeader />
         <main className="flex flex-1 flex-col">
           <PageTransition>{children}</PageTransition>

@@ -8,6 +8,7 @@ type WishlistState = {
   toggle: (productId: string) => void;
   has: (productId: string) => boolean;
   clear: () => void;
+  pruneTo: (validIds: string[]) => void;
 };
 
 export const useWishlist = create<WishlistState>()(
@@ -22,7 +23,18 @@ export const useWishlist = create<WishlistState>()(
         })),
       has: (productId) => get().ids.includes(productId),
       clear: () => set({ ids: [] }),
+      pruneTo: (validIds) => {
+        const allowed = new Set(validIds);
+        set((state) => {
+          const next = state.ids.filter((id) => allowed.has(id));
+          return next.length === state.ids.length ? state : { ids: next };
+        });
+      },
     }),
-    { name: "yanelle-wishlist" },
+    {
+      name: "yanelle-wishlist-v2",
+      version: 2,
+      migrate: () => ({ ids: [] }),
+    },
   ),
 );

@@ -95,6 +95,8 @@
     "novaPoshtaHint": "Доставка у відділення або поштомат Нової Пошти по всій Україні. Безкоштовно.",
     "novaPoshtaBranch": "Відділення / поштомат Нової Пошти",
     "novaPoshtaBranchPlaceholder": "Наприклад: відділення №12, вул. Хрещатик, 22",
+    "cityPlaceholder": "Почніть вводити місто…",
+    "npLoading": "Шукаємо у Новій Пошті…",
     "payOnline": "Оплата карткою / Apple Pay / Google Pay",
     "payOnlineHint": "Visa, Mastercard, Apple Pay та Google Pay через захищений Stripe. Після підтвердження даних відкриється форма оплати.",
     "paySecureTitle": "Безпечна оплата",

@@ -95,6 +95,8 @@
     "novaPoshtaHint": "Livraison vers un bureau ou un casiers Nova Poshta en Ukraine. Offerte.",
     "novaPoshtaBranch": "Bureau / casier Nova Poshta",
     "novaPoshtaBranchPlaceholder": "ex. bureau n°12, rue Khrechtchatyk 22",
+    "cityPlaceholder": "Commencez à saisir une ville…",
+    "npLoading": "Recherche Nova Poshta…",
     "payOnline": "Carte / Apple Pay / Google Pay",
     "payOnlineHint": "Visa, Mastercard, Apple Pay et Google Pay via Stripe. Après confirmation, le formulaire de paiement s'ouvre.",
     "paySecureTitle": "Paiement sécurisé",

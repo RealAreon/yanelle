@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { CheckoutPayment, PaymentMethodBadges } from "./checkout-payment";
+import { NovaPoshtaFields } from "./nova-poshta-fields";
 import { Price } from "./price";
 
 type PaymentSession = {
@@ -149,16 +150,9 @@ export function CheckoutClient({ locale }: { locale: string }) {
               {t("novaPoshtaHint")}
             </p>
           </div>
-          <div className="mt-6 grid gap-5 sm:grid-cols-2">
-            <Field name="city" label={t("city")} required />
-            <Field
-              name="address"
-              label={t("novaPoshtaBranch")}
-              required
-              className="sm:col-span-2"
-              placeholder={t("novaPoshtaBranchPlaceholder")}
-            />
-            <label className="sm:col-span-2">
+          <NovaPoshtaFields />
+          <div className="mt-6">
+            <label className="block">
               <Label htmlFor="notes">{t("notes")}</Label>
               <textarea
                 id="notes"

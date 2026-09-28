@@ -95,6 +95,8 @@
     "novaPoshtaHint": "Dostawa do oddziału lub paczkomatu Nova Poshta na terenie Ukrainy. Bezpłatnie.",
     "novaPoshtaBranch": "Oddział / paczkomat Nova Poshta",
     "novaPoshtaBranchPlaceholder": "np. oddział nr 12, ul. Chreszczatyk 22",
+    "cityPlaceholder": "Zacznij wpisywać miasto…",
+    "npLoading": "Szukam w Nova Poshta…",
     "payOnline": "Karta / Apple Pay / Google Pay",
     "payOnlineHint": "Visa, Mastercard, Apple Pay i Google Pay przez Stripe. Po potwierdzeniu danych otworzy się formularz płatności.",
     "paySecureTitle": "Bezpieczna płatność",

@@ -95,6 +95,8 @@
     "novaPoshtaHint": "Lieferung an eine Nova-Poshta-Filiale oder ein Paketfach in der Ukraine. Kostenlos.",
     "novaPoshtaBranch": "Nova-Poshta-Filiale / Paketfach",
     "novaPoshtaBranchPlaceholder": "z. B. Filiale Nr. 12, Chreschtschatyk 22",
+    "cityPlaceholder": "Stadt eingeben…",
+    "npLoading": "Suche bei Nova Poshta…",
     "payOnline": "Karte / Apple Pay / Google Pay",
     "payOnlineHint": "Visa, Mastercard, Apple Pay und Google Pay über Stripe. Nach Bestätigung öffnet sich das Zahlungsformular.",
     "paySecureTitle": "Sichere Zahlung",

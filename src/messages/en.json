@@ -95,6 +95,8 @@
     "novaPoshtaHint": "Delivery to a Nova Poshta branch or parcel locker across Ukraine. Complimentary.",
     "novaPoshtaBranch": "Nova Poshta branch / locker",
     "novaPoshtaBranchPlaceholder": "e.g. Branch No. 12, Khreshchatyk St, 22",
+    "cityPlaceholder": "Start typing a city…",
+    "npLoading": "Searching Nova Poshta…",
     "payOnline": "Card / Apple Pay / Google Pay",
     "payOnlineHint": "Visa, Mastercard, Apple Pay and Google Pay via secure Stripe. After confirming details, the payment form opens.",
     "paySecureTitle": "Secure payment",

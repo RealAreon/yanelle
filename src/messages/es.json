@@ -95,6 +95,8 @@
     "novaPoshtaHint": "Envío a sucursal o taquilla Nova Poshta en Ucrania. Gratuito.",
     "novaPoshtaBranch": "Sucursal / taquilla Nova Poshta",
     "novaPoshtaBranchPlaceholder": "p. ej. sucursal n.º 12, calle Khreshchatyk 22",
+    "cityPlaceholder": "Empieza a escribir una ciudad…",
+    "npLoading": "Buscando en Nova Poshta…",
     "payOnline": "Tarjeta / Apple Pay / Google Pay",
     "payOnlineHint": "Visa, Mastercard, Apple Pay y Google Pay vía Stripe. Tras confirmar los datos se abre el formulario de pago.",
     "paySecureTitle": "Pago seguro",

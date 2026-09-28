@@ -21,6 +21,7 @@ type CartState = {
   removeItem: (variantId: string) => void;
   setQuantity: (variantId: string, quantity: number) => void;
   clear: () => void;
+  pruneTo: (validProductIds: string[]) => void;
   itemCount: () => number;
   subtotalUAH: () => number;
 };
@@ -59,10 +60,23 @@ export const useCart = create<CartState>()(
                 ),
         })),
       clear: () => set({ items: [] }),
+      pruneTo: (validProductIds) => {
+        const allowed = new Set(validProductIds);
+        set((state) => {
+          const next = state.items.filter((item) =>
+            allowed.has(item.productId),
+          );
+          return next.length === state.items.length ? state : { items: next };
+        });
+      },
       itemCount: () => get().items.reduce((n, i) => n + i.quantity, 0),
       subtotalUAH: () =>
         get().items.reduce((sum, i) => sum + i.priceUAH * i.quantity, 0),
     }),
-    { name: "yanelle-cart" },
+    {
+      name: "yanelle-cart-v2",
+      version: 2,
+      migrate: () => ({ items: [] }),
+    },
   ),
 );
