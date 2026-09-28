@@ -59,9 +59,17 @@ export function ProductCard({
         aria-label={wished ? "Remove from wishlist" : "Add to wishlist"}
         aria-pressed={wished}
         onClick={() => toggle(product.id)}
-        className="absolute right-2 top-2 flex size-11 cursor-pointer items-center justify-center bg-beige/80 transition-colors hover:bg-beige"
+        className="absolute right-2 top-2 z-10 flex size-10 cursor-pointer items-center justify-center text-foreground/85 drop-shadow-sm transition-colors duration-300 hover:text-foreground"
       >
-        <Heart className={wished ? "fill-ink" : ""} size={18} strokeWidth={1.5} />
+        <Heart
+          size={20}
+          strokeWidth={1.5}
+          className={`transition-all duration-500 ease-out ${
+            wished
+              ? "scale-110 fill-[#c23b3b] text-[#c23b3b]"
+              : "fill-transparent"
+          }`}
+        />
       </button>
       <div className="flex flex-col gap-2 py-3 sm:flex-row sm:items-start sm:justify-between sm:gap-3 sm:py-4">
         <div className="min-w-0">

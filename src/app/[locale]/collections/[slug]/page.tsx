@@ -1,9 +1,9 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
-import { collections, getCollectionBySlug } from "@/data/collections";
-import { products } from "@/data/products";
+import { collections } from "@/data/collections";
 import { tLocal } from "@/lib/locale-text";
+import { getCatalogCollectionBySlug } from "@/lib/shopify";
 import { ProductCard } from "@/components/store/product-card";
 
 export function generateStaticParams() {
@@ -17,9 +17,9 @@ export default async function CollectionPage({
 }) {
   const { locale, slug } = await params;
   setRequestLocale(locale);
-  const collection = getCollectionBySlug(slug);
-  if (!collection) notFound();
-  const items = products.filter((product) => collection.productIds.includes(product.id));
+  const data = await getCatalogCollectionBySlug(slug);
+  if (!data) notFound();
+  const { collection, products: items } = data;
 
   return (
     <div>

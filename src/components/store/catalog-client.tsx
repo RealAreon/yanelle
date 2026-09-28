@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import type { Category, Product } from "@/data/products";
 import { ElegantSelect } from "@/components/layout/elegant-select";
 import { CatalogSearch } from "./catalog-search";
@@ -82,6 +83,8 @@ export function CatalogClient({
     { value: "price-desc", label: "Price descending" },
   ];
 
+  const listKey = `${query}|${category}|${tag}|${sort}|${visible.map((p) => p.id).join(",")}`;
+
   return (
     <div className="grid gap-12 lg:grid-cols-[260px_1fr] lg:gap-16">
       <aside className="space-y-8 lg:sticky lg:top-28 lg:self-start">
@@ -139,20 +142,41 @@ export function CatalogClient({
       </aside>
 
       <div>
-        <p className="mb-8 text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+        <p className="mb-8 text-[11px] uppercase tracking-[0.18em] text-muted-foreground transition-opacity duration-500">
           {visible.length} pieces
         </p>
-        {visible.length > 0 ? (
-          <div className="grid grid-cols-2 gap-x-5 gap-y-10 md:grid-cols-3 xl:grid-cols-4">
-            {visible.map((product) => (
-              <ProductCard key={product.id} product={product} locale={locale} />
-            ))}
-          </div>
-        ) : (
-          <p className="border-y border-border/70 py-16 text-center font-heading text-3xl">
-            No pieces match your selection.
-          </p>
-        )}
+        <AnimatePresence mode="wait" initial={false}>
+          <motion.div
+            key={listKey}
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+          >
+            {visible.length > 0 ? (
+              <div className="grid grid-cols-2 gap-x-5 gap-y-10 md:grid-cols-3 xl:grid-cols-4">
+                {visible.map((product, i) => (
+                  <motion.div
+                    key={product.id}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      duration: 0.35,
+                      delay: Math.min(i * 0.04, 0.24),
+                      ease: [0.22, 1, 0.36, 1],
+                    }}
+                  >
+                    <ProductCard product={product} locale={locale} />
+                  </motion.div>
+                ))}
+              </div>
+            ) : (
+              <p className="border-y border-border/70 py-16 text-center font-heading text-3xl">
+                No pieces match your selection.
+              </p>
+            )}
+          </motion.div>
+        </AnimatePresence>
       </div>
     </div>
   );

@@ -1,6 +1,103 @@
 [
   {
     "customer": {
+      "name": "121212",
+      "email": "12121123124@mail.com",
+      "phone": "121212121221",
+      "city": "121212",
+      "address": "12121212",
+      "postal": "",
+      "notes": "12121212121212"
+    },
+    "shippingMethod": "nova_poshta",
+    "paymentMethod": "online",
+    "locale": "uk",
+    "items": [
+      {
+        "productId": "yn-007",
+        "slug": "soft-leather-trench",
+        "name": "Шкіряний тренч",
+        "image": "https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=1200&q=80",
+        "priceUAH": 22800,
+        "variantId": "yn-007-1A1A1A-xs",
+        "size": "XS",
+        "color": "Чорний",
+        "quantity": 1
+      },
+      {
+        "productId": "yn-015",
+        "slug": "soft-hobo-bag",
+        "name": "М'яка сумка-хобо",
+        "image": "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1200&q=80",
+        "priceUAH": 14200,
+        "variantId": "yn-015-3C2415-onesize",
+        "size": "One Size",
+        "color": "Еспресо",
+        "quantity": 1
+      },
+      {
+        "productId": "yn-002",
+        "slug": "cashmere-wrap-dress",
+        "name": "Кашемірова сукня-обгортка",
+        "image": "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&w=1200&q=80",
+        "priceUAH": 16800,
+        "variantId": "yn-002-C4A484-xs",
+        "size": "XS",
+        "color": "Верблюд",
+        "quantity": 1
+      }
+    ],
+    "id": "YN-2026-1057D412",
+    "createdAt": "2026-09-28T19:50:08.809Z",
+    "status": "awaiting_payment",
+    "paymentNote": "Awaiting Stripe payment (card / Apple Pay / Google Pay).",
+    "totalUAH": 53800
+  },
+  {
+    "customer": {
+      "name": "Федя",
+      "email": "areon.softer@mail.com",
+      "phone": "0930259157",
+      "city": "Киев",
+      "address": "Булаховского 38, кв 57",
+      "postal": "",
+      "notes": "2332443"
+    },
+    "shippingMethod": "nova_poshta",
+    "paymentMethod": "online",
+    "locale": "en",
+    "items": [
+      {
+        "productId": "yn-001",
+        "slug": "silk-column-dress",
+        "name": "Silk Column Dress",
+        "image": "https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=1200&q=80",
+        "priceUAH": 14500,
+        "variantId": "yn-001-1A1A1A-xs",
+        "size": "XS",
+        "color": "Black",
+        "quantity": 1
+      },
+      {
+        "productId": "yn-007",
+        "slug": "soft-leather-trench",
+        "name": "Soft Leather Trench",
+        "image": "https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=1200&q=80",
+        "priceUAH": 22800,
+        "variantId": "yn-007-1A1A1A-xs",
+        "size": "XS",
+        "color": "Black",
+        "quantity": 2
+      }
+    ],
+    "id": "YN-2026-CB5134AF",
+    "createdAt": "2026-09-25T16:01:34.146Z",
+    "status": "awaiting_payment",
+    "paymentNote": "Online card gateway will be connected; demo order accepted.",
+    "totalUAH": 60100
+  },
+  {
+    "customer": {
       "name": "Федя",
       "email": "areon.softer@mail.com",
       "phone": "0930259157",

@@ -6,11 +6,12 @@ import {
   journalPosts,
   testimonials,
 } from "@/data/editorial";
-import { products } from "@/data/products";
 import { Link } from "@/i18n/navigation";
 import { tLocal } from "@/lib/locale-text";
+import { getCatalogProducts } from "@/lib/shopify";
 import { FadeIn } from "@/components/ui/fade-in";
 import { ProductCard } from "@/components/store/product-card";
+import { TestimonialsCarousel } from "@/components/store/testimonials-carousel";
 
 export default async function HomePage({
   params,
@@ -20,11 +21,13 @@ export default async function HomePage({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("home");
-  const featured = products.filter((product) => product.featured).slice(0, 4);
-  const limited = products.filter((product) => product.limited).slice(0, 3);
-  const newest = products
-    .filter((product) => product.tags.includes("new"))
-    .slice(0, 4);
+  const products = await getCatalogProducts();
+  const featuredTagged = products.filter((product) => product.featured);
+  const featured = (featuredTagged.length ? featuredTagged : products).slice(0, 4);
+  const limitedTagged = products.filter((product) => product.limited);
+  const limited = (limitedTagged.length ? limitedTagged : products.slice(0, 3)).slice(0, 3);
+  const newestTagged = products.filter((product) => product.tags.includes("new"));
+  const newest = (newestTagged.length ? newestTagged : products).slice(0, 4);
 
   return (
     <>
@@ -38,18 +41,18 @@ export default async function HomePage({
           className="object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-black/10" />
-        <div className="page-gutter relative flex min-h-[calc(100svh-4rem)] flex-col items-center justify-end pb-12 text-center sm:pb-16 lg:min-h-[calc(100svh-5rem)] lg:pb-20">
-          <FadeIn className="w-full max-w-2xl">
-            <p className="brand-lettering mx-auto font-heading text-[clamp(1.55rem,6.2vw,7rem)] leading-none">
+        <div className="relative flex min-h-[calc(100svh-4rem)] flex-col items-center justify-end px-5 pb-12 text-center sm:px-8 sm:pb-16 lg:min-h-[calc(100svh-5rem)] lg:pb-20">
+          <FadeIn className="mx-auto flex w-full max-w-2xl flex-col items-center text-center">
+            <p className="brand-lettering font-heading text-[clamp(1.55rem,6.2vw,7rem)] leading-none">
               ＹＡＮÈＬＬＥ
             </p>
-            <h1 className="mt-5 px-1 font-heading text-[1.65rem] font-normal leading-snug text-balance sm:mt-8 sm:text-4xl lg:text-5xl">
+            <h1 className="mt-5 max-w-xl px-1 font-heading text-[1.65rem] font-normal leading-snug text-balance sm:mt-8 sm:text-4xl lg:text-5xl">
               {t("heroTitle")}
             </h1>
             <p className="mx-auto mt-3 max-w-md px-1 text-[13px] leading-6 text-white/85 sm:mt-4 sm:max-w-xl sm:text-sm sm:leading-7">
               {t("heroSubtitle")}
             </p>
-            <div className="mt-7 flex w-full flex-col items-stretch justify-center gap-3 px-2 sm:mt-8 sm:flex-row sm:flex-wrap sm:items-center sm:px-0">
+            <div className="mt-7 flex w-full max-w-md flex-col items-stretch justify-center gap-3 sm:mt-8 sm:max-w-none sm:flex-row sm:flex-wrap sm:items-center">
               <Link
                 href="/shop"
                 className="border border-beige bg-beige px-5 py-3 text-center text-[11px] uppercase tracking-[0.14em] text-ink transition-colors duration-300 hover:bg-transparent hover:text-beige sm:px-7 sm:text-xs sm:tracking-[0.16em]"
@@ -88,7 +91,7 @@ export default async function HomePage({
         </FadeIn>
       </section>
 
-      <section className="border-y border-border/50 bg-secondary/70">
+      <section className="bg-grain border-y border-border/50 bg-secondary/70">
         <div className="page-gutter grid gap-10 py-16 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20 lg:py-24">
           <FadeIn>
             <p className="text-[10px] uppercase tracking-[0.25em] text-champagne">
@@ -159,7 +162,7 @@ export default async function HomePage({
         ))}
       </section>
 
-      <section className="page-gutter bg-beige-deep/55 py-20 lg:py-28">
+      <section className="bg-grain bg-journal-lux page-gutter py-20 lg:py-28">
         <FadeIn>
           <div className="mb-12 max-w-2xl">
             <p className="text-[10px] uppercase tracking-[0.25em] text-champagne">
@@ -168,14 +171,18 @@ export default async function HomePage({
             <h2 className="mt-4 font-heading text-4xl sm:text-5xl">
               {t("journalTitle")}
             </h2>
-            <p className="mt-4 text-sm leading-7 text-muted-foreground">
+            <div className="gold-line mt-5 h-px w-24" />
+            <p className="mt-5 text-sm leading-7 text-muted-foreground">
               {t("journalSubtitle")}
             </p>
           </div>
-          <div className="grid gap-10 md:grid-cols-3">
-            {journalPosts.map((post) => (
-              <article key={post.id} className="group">
-                <div className="relative aspect-[4/5] overflow-hidden bg-beige-deep">
+          <div className="grid gap-10 md:grid-cols-3 md:gap-8 lg:gap-12">
+            {journalPosts.map((post, index) => (
+              <article
+                key={post.id}
+                className={`group ${index === 1 ? "md:mt-10" : ""}`}
+              >
+                <div className="relative aspect-[4/5] overflow-hidden bg-beige-deep/40 ring-1 ring-foreground/[0.06]">
                   <Image
                     src={post.image}
                     alt={tLocal(post.title, locale)}
@@ -183,11 +190,12 @@ export default async function HomePage({
                     sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
                   />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/15 via-transparent to-transparent opacity-60" />
                 </div>
                 <p className="mt-5 text-[10px] uppercase tracking-[0.2em] text-champagne">
                   {tLocal(post.category, locale)}
                 </p>
-                <h3 className="mt-3 font-heading text-2xl leading-snug">
+                <h3 className="mt-3 font-heading text-2xl leading-snug transition-colors duration-300 group-hover:text-champagne">
                   {tLocal(post.title, locale)}
                 </h3>
                 <p className="mt-3 text-sm leading-7 text-muted-foreground">
@@ -199,7 +207,7 @@ export default async function HomePage({
         </FadeIn>
       </section>
 
-      <section className="bg-mist/70 page-gutter py-20 lg:py-28">
+      <section className="bg-background page-gutter py-20 lg:py-28">
         <FadeIn>
           <div className="mx-auto max-w-7xl">
             <p className="text-[10px] uppercase tracking-[0.25em] text-champagne">
@@ -223,7 +231,7 @@ export default async function HomePage({
 
       <section className="page-gutter py-20 lg:py-28">
         <FadeIn>
-          <div className="mb-12 text-center">
+          <div className="mb-4 text-center">
             <p className="text-[10px] uppercase tracking-[0.25em] text-champagne">
               {t("testimonialsEyebrow")}
             </p>
@@ -231,30 +239,11 @@ export default async function HomePage({
               {t("testimonialsTitle")}
             </h2>
           </div>
-          <div className="grid gap-8 lg:grid-cols-3">
-            {testimonials.map((item) => (
-              <blockquote
-                key={item.id}
-                className="border border-border/70 bg-muted/80 px-7 py-9"
-              >
-                <p className="font-heading text-xl leading-8 text-foreground/90">
-                  “{tLocal(item.quote, locale)}”
-                </p>
-                <footer className="mt-8 border-t border-border/60 pt-5">
-                  <cite className="not-italic text-sm font-medium tracking-wide">
-                    {item.name}
-                  </cite>
-                  <p className="mt-1 text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
-                    {tLocal(item.role, locale)}
-                  </p>
-                </footer>
-              </blockquote>
-            ))}
-          </div>
+          <TestimonialsCarousel items={testimonials} locale={locale} />
         </FadeIn>
       </section>
 
-      <section className="relative overflow-hidden">
+      <section className="relative min-h-[70vh] overflow-hidden lg:min-h-[78vh]">
         <div className="absolute inset-0">
           <Image
             src="https://images.unsplash.com/photo-1558171813-4c088753af8f?auto=format&fit=crop&w=2000&q=85"
@@ -263,24 +252,23 @@ export default async function HomePage({
             sizes="100vw"
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-ink/55" />
+          <div className="absolute inset-0 bg-gradient-to-t from-ink/75 via-ink/45 to-ink/25" />
         </div>
-        <div className="page-gutter relative grid gap-10 py-24 text-white lg:grid-cols-2 lg:items-end lg:py-32">
-          <FadeIn>
-            <p className="text-[10px] uppercase tracking-[0.25em] text-champagne">
+        <div className="page-gutter relative flex min-h-[70vh] flex-col justify-end py-16 text-white lg:min-h-[78vh] lg:py-24">
+          <FadeIn className="max-w-3xl">
+            <p className="text-[11px] uppercase tracking-[0.28em] text-champagne sm:text-xs">
               {t("craftEyebrow")}
             </p>
-            <h2 className="mt-4 max-w-lg font-heading text-4xl sm:text-5xl">
+            <h2 className="mt-5 font-heading text-[clamp(2.5rem,6vw,4.75rem)] leading-[1.05]">
               {t("craftTitle")}
             </h2>
-          </FadeIn>
-          <FadeIn delay={0.1}>
-            <p className="max-w-md text-sm leading-7 text-white/85">
+            <div className="gold-line mt-6 h-px w-28 opacity-80" />
+            <p className="mt-6 max-w-xl text-base leading-8 text-white/90 sm:text-lg sm:leading-9">
               {t("craftBody")}
             </p>
             <Link
               href="/about"
-              className="mt-8 inline-block border-b border-champagne pb-1 text-xs uppercase tracking-[0.16em]"
+              className="mt-10 inline-block border-b border-champagne pb-1.5 text-xs uppercase tracking-[0.2em] text-beige transition-opacity duration-300 hover:opacity-80 sm:text-sm"
             >
               {t("craftCta")}
             </Link>
@@ -315,18 +303,32 @@ export default async function HomePage({
         </section>
       )}
 
-      <section className="page-gutter bg-secondary/45 py-24 text-center lg:py-32">
-        <FadeIn>
-          <h2 className="font-heading text-4xl sm:text-5xl">{t("newsletterTitle")}</h2>
-          <p className="mx-auto mt-4 max-w-lg text-sm leading-7 text-muted-foreground">
+      <section className="bg-grain relative overflow-hidden border-y border-border/40 bg-secondary/45 py-14 text-center sm:py-16 lg:py-20">
+        <FadeIn className="relative mx-auto max-w-xl px-4">
+          <p className="brand-lettering font-heading text-sm tracking-[0.35em] text-champagne">
+            ＹＡＮÈＬＬＥ
+          </p>
+          <div className="gold-line mx-auto mt-4 h-px w-14" />
+          <h2 className="mt-5 font-heading text-3xl sm:text-4xl">
+            {t("newsletterTitle")}
+          </h2>
+          <p className="mx-auto mt-3 max-w-md text-sm leading-7 text-muted-foreground">
             {t("newsletterSubtitle")}
           </p>
-          <a
-            href="#footer"
-            className="mt-7 inline-block border-b border-champagne pb-1 text-xs uppercase tracking-[0.18em]"
-          >
-            {t("newsletterCta")}
-          </a>
+          <div className="mt-7 flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-4">
+            <a
+              href="#footer"
+              className="inline-flex min-w-[11rem] items-center justify-center border border-ink bg-ink px-7 py-3 text-xs uppercase tracking-[0.18em] text-beige transition-colors duration-300 hover:bg-transparent hover:text-ink"
+            >
+              {t("newsletterCta")}
+            </a>
+            <Link
+              href="/lookbook"
+              className="text-xs uppercase tracking-[0.18em] text-muted-foreground underline decoration-champagne underline-offset-8 transition-colors duration-300 hover:text-champagne"
+            >
+              Lookbook
+            </Link>
+          </div>
         </FadeIn>
       </section>
     </>

@@ -95,12 +95,21 @@
     "novaPoshtaHint": "Delivery to a Nova Poshta branch or parcel locker across Ukraine. Complimentary.",
     "novaPoshtaBranch": "Nova Poshta branch / locker",
     "novaPoshtaBranchPlaceholder": "e.g. Branch No. 12, Khreshchatyk St, 22",
-    "payOnline": "Pay by card online",
-    "payOnlineHint": "Card gateway will be connected later. Your order is saved as a demo.",
+    "payOnline": "Card / Apple Pay / Google Pay",
+    "payOnlineHint": "Visa, Mastercard, Apple Pay and Google Pay via secure Stripe. After confirming details, the payment form opens.",
+    "paySecureTitle": "Secure payment",
+    "paySecureHint": "Card data is handled by Stripe. We never store it.",
+    "orPayWithCard": "or pay by card",
+    "payNow": "Pay now",
+    "paying": "Processing…",
+    "backToDetails": "Back",
+    "continueToPayment": "Continue to payment",
+    "paymentFailed": "Payment was not completed. Please try again.",
+    "paymentSetupError": "Payments are not configured. Add Stripe keys to .env.",
     "payCod": "Cash on delivery",
     "payCodHint": "Pay when collecting at Nova Poshta. Carrier COD fees are paid by the recipient per NP rates.",
-    "placeOrder": "Place order",
-    "placing": "Placing order…",
+    "placeOrder": "Continue to payment",
+    "placing": "Creating order…",
     "name": "Full name",
     "firstName": "First name",
     "lastName": "Last name",
@@ -130,10 +139,10 @@
   },
   "shipping": {
     "title": "Shipping & returns",
-    "delivery": "We ship across Ukraine with Nova Poshta to branches or parcel lockers. Pay cash on delivery or by card online. International shipping on request.",
+    "delivery": "We ship across Ukraine with Nova Poshta to branches or parcel lockers. Payment by card online. International shipping on request.",
     "complimentary": "Complimentary Nova Poshta shipping on every order.",
-    "returns": "Returns within 14 days, provided items retain tags, packaging, and original condition.",
-    "returnsVideo": "For card payments, returns are accepted only with an unedited unboxing video of the parcel."
+    "returns": "Returns within 2 days, provided items retain tags, packaging, and original condition.",
+    "returnsVideo": "Returns are accepted only with an unedited unboxing video of the parcel."
   },
   "contact": {
     "title": "Contact",
@@ -170,11 +179,11 @@
         },
         {
           "title": "Orders and payment",
-          "body": "Orders are placed through the shopping bag. Primary delivery is Nova Poshta. Payment may be cash on delivery or online when the gateway is connected.\n\nWe may contact you to confirm an order. ＹＡＮÈＬＬＥ may decline an order in case of pricing error, stock issues, or suspected fraud."
+          "body": "Orders are placed through the shopping bag. Primary delivery is Nova Poshta. Payment is by card online.\n\nWe may contact you to confirm an order. ＹＡＮÈＬＬＥ may decline an order in case of pricing error, stock issues, or suspected fraud."
         },
         {
           "title": "Shipping and returns",
-          "body": "Shipping and return conditions are described on the Shipping page. Returns are accepted within 14 days if tags, packaging, and condition are preserved. Card payments may require an unboxing video."
+          "body": "Shipping and return conditions are described on the Shipping page. Returns are accepted within 2 days if tags, packaging, and condition are preserved. An unboxing video may be required."
         },
         {
           "title": "Intellectual property",

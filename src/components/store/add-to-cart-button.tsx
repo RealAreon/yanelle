@@ -7,6 +7,7 @@ import { tLocal } from "@/lib/locale-text";
 import { useCart } from "@/store/cart";
 import { usePreferences } from "@/store/preferences";
 import { Button } from "@/components/ui/button";
+import { flyToCart } from "./fly-to-cart";
 
 export function AddToCartButton({
   product,
@@ -38,8 +39,9 @@ export function AddToCartButton({
       size="lg"
       className={className}
       disabled={!variant || variant.stock < 1}
-      onClick={() => {
+      onClick={(event) => {
         if (!variant) return;
+        flyToCart(event.currentTarget);
         addItem(
           {
             productId: product.id,
@@ -53,7 +55,7 @@ export function AddToCartButton({
           },
           quantity,
         );
-        setCartOpen(true);
+        window.setTimeout(() => setCartOpen(true), 520);
         toast.success(
           locale === "uk" ? "Додано до кошика" : "Added to your bag",
         );

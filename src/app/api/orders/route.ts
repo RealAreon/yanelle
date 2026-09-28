@@ -16,7 +16,7 @@ const orderSchema = z.object({
     notes: z.string().trim().max(1000).optional().default(""),
   }),
   shippingMethod: z.literal("nova_poshta").default("nova_poshta"),
-  paymentMethod: z.enum(["online", "cod"]),
+  paymentMethod: z.literal("online").default("online"),
   locale: z.string().trim().min(2).max(5),
   items: z
     .array(
@@ -49,17 +49,14 @@ export async function POST(request: Request) {
       { status: 400 },
     );
   }
-  const paymentMethod = result.data.paymentMethod;
   const order: StoredOrder = {
     ...result.data,
     shippingMethod: "nova_poshta",
+    paymentMethod: "online",
     id: `YN-${new Date().getFullYear()}-${randomUUID().slice(0, 8).toUpperCase()}`,
     createdAt: new Date().toISOString(),
-    status: paymentMethod === "online" ? "awaiting_payment" : "cod_pending",
-    paymentNote:
-      paymentMethod === "cod"
-        ? "Nova Poshta · cash on delivery (накладений платіж)."
-        : "Online card gateway will be connected; demo order accepted.",
+    status: "awaiting_payment",
+    paymentNote: "Awaiting Stripe payment (card / Apple Pay / Google Pay).",
     totalUAH: result.data.items.reduce(
       (sum, item) => sum + item.priceUAH * item.quantity,
       0,

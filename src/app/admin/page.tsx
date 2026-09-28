@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { Package, ShoppingBag } from "lucide-react";
-import { products } from "@/data/products";
+import { getCatalogProducts } from "@/lib/shopify";
 
-export default function AdminPage() {
+export default async function AdminPage() {
+  const products = await getCatalogProducts();
   return (
     <div>
       <p className="text-xs uppercase tracking-[0.2em] text-[#9b7b4c]">Demo dashboard</p>

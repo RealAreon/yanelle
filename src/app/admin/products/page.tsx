@@ -1,8 +1,9 @@
 import Image from "next/image";
-import { products } from "@/data/products";
 import { formatMoney } from "@/lib/currency";
+import { getCatalogProducts } from "@/lib/shopify";
 
-export default function AdminProductsPage() {
+export default async function AdminProductsPage() {
+  const products = await getCatalogProducts();
   return (
     <div>
       <h1 className="font-serif text-5xl">Products</h1>

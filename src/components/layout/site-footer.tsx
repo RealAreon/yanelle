@@ -27,23 +27,6 @@ function InstagramIcon({ size = 17 }: SocialIconProps) {
   );
 }
 
-function FacebookIcon({ size = 17 }: SocialIconProps) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      <path d="M14 8h2.5V5H14a4 4 0 0 0-4 4v2H7.5v3H10v7h3v-7h2.4l.6-3H13V9a1 1 0 0 1 1-1Z" />
-    </svg>
-  );
-}
-
-function PinterestIcon({ size = 17 }: SocialIconProps) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      <circle cx="12" cy="12" r="9" />
-      <path d="M9.5 15.5 11 8.5h2.2c1.4 0 2.3.8 2.3 2 0 1.4-1 2.3-2.4 2.3H11.7l-.5 2.7" />
-    </svg>
-  );
-}
-
 function TelegramIcon({ size = 17 }: SocialIconProps) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
@@ -65,8 +48,6 @@ function WhatsAppIcon({ size = 17 }: SocialIconProps) {
 const socials = [
   { label: "Email", href: "mailto:hello@yanelle.com", Icon: MailIcon },
   { label: "Instagram", href: "https://instagram.com/yanelle", Icon: InstagramIcon },
-  { label: "Facebook", href: "https://facebook.com/yanelle", Icon: FacebookIcon },
-  { label: "Pinterest", href: "https://pinterest.com/yanelle", Icon: PinterestIcon },
   { label: "Telegram", href: "https://t.me/yanelle", Icon: TelegramIcon },
   { label: "WhatsApp", href: "https://wa.me/380000000000", Icon: WhatsAppIcon },
 ] as const;
@@ -77,16 +58,13 @@ export function SiteFooter() {
   const footer = useTranslations("footer");
 
   return (
-    <footer id="footer" className="border-t border-white/10 bg-ink text-beige">
+    <footer id="footer" className="border-t bg-secondary/40">
       <div className="page-gutter grid gap-12 py-16 lg:grid-cols-[1.2fr_1fr_1.3fr] lg:py-20">
         <div>
-          <Link
-            href="/"
-            className="brand-lettering font-heading text-2xl text-champagne"
-          >
+          <Link href="/" className="brand-lettering font-heading text-2xl">
             ＹＡＮÈＬＬＥ
           </Link>
-          <p className="mt-5 max-w-xs text-sm leading-7 text-beige/65">
+          <p className="mt-5 max-w-xs text-sm leading-7 text-muted-foreground">
             Quiet forms, honest materials, considered proportions.
           </p>
           <div className="mt-6 flex flex-wrap gap-2">
@@ -101,7 +79,7 @@ export function SiteFooter() {
                     : "noopener noreferrer"
                 }
                 aria-label={label}
-                className="inline-flex size-10 items-center justify-center border border-champagne/35 text-champagne transition-colors duration-300 hover:border-champagne hover:bg-champagne/10"
+                className="inline-flex size-10 items-center justify-center border border-border text-foreground transition-colors duration-300 hover:border-champagne hover:text-champagne"
               >
                 <Icon />
               </a>
@@ -109,69 +87,42 @@ export function SiteFooter() {
           </div>
           <a
             href="mailto:hello@yanelle.com"
-            className="mt-5 inline-block text-sm tracking-wide text-beige/65 transition-colors duration-300 hover:text-champagne"
+            className="mt-5 inline-block text-sm tracking-wide text-muted-foreground transition-colors duration-300 hover:text-champagne"
           >
             hello@yanelle.com
           </a>
         </div>
         <div className="grid grid-cols-2 gap-8 text-sm sm:grid-cols-3">
           <div className="flex flex-col gap-3">
-            <p className="mb-2 text-[10px] uppercase tracking-[0.2em] text-champagne/80">
+            <p className="mb-2 text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
               Explore
             </p>
-            <Link href="/shop" className="text-beige/80 hover:text-champagne">
-              {nav("shop")}
-            </Link>
-            <Link
-              href="/collections"
-              className="text-beige/80 hover:text-champagne"
-            >
-              {nav("collections")}
-            </Link>
-            <Link href="/lookbook" className="text-beige/80 hover:text-champagne">
-              {nav("lookbook")}
-            </Link>
-            <Link href="/about" className="text-beige/80 hover:text-champagne">
-              {nav("about")}
-            </Link>
+            <Link href="/shop">{nav("shop")}</Link>
+            <Link href="/collections">{nav("collections")}</Link>
+            <Link href="/lookbook">{nav("lookbook")}</Link>
+            <Link href="/about">{nav("about")}</Link>
           </div>
           <div className="flex flex-col gap-3">
-            <p className="mb-2 text-[10px] uppercase tracking-[0.2em] text-champagne/80">
+            <p className="mb-2 text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
               Service
             </p>
-            <Link href="/contact" className="text-beige/80 hover:text-champagne">
-              {nav("contact")}
-            </Link>
-            <Link href="/shipping" className="text-beige/80 hover:text-champagne">
-              {nav("shipping")}
-            </Link>
-            <Link href="/wishlist" className="text-beige/80 hover:text-champagne">
-              {nav("wishlist")}
-            </Link>
-            <Link href="/cart" className="text-beige/80 hover:text-champagne">
-              {nav("cart")}
-            </Link>
+            <Link href="/contact">{nav("contact")}</Link>
+            <Link href="/shipping">{nav("shipping")}</Link>
+            <Link href="/wishlist">{nav("wishlist")}</Link>
+            <Link href="/cart">{nav("cart")}</Link>
           </div>
           <div className="col-span-2 flex flex-col gap-3 sm:col-span-1">
-            <p className="mb-2 text-[10px] uppercase tracking-[0.2em] text-champagne/80">
+            <p className="mb-2 text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
               {footer("policies")}
             </p>
-            <Link href="/terms" className="text-beige/80 hover:text-champagne">
-              {footer("terms")}
-            </Link>
-            <Link href="/privacy" className="text-beige/80 hover:text-champagne">
-              {footer("privacy")}
-            </Link>
-            <Link href="/cookies" className="text-beige/80 hover:text-champagne">
-              {footer("cookies")}
-            </Link>
+            <Link href="/terms">{footer("terms")}</Link>
+            <Link href="/privacy">{footer("privacy")}</Link>
+            <Link href="/cookies">{footer("cookies")}</Link>
           </div>
         </div>
         <div>
-          <h2 className="font-heading text-3xl text-beige">
-            {home("newsletterTitle")}
-          </h2>
-          <p className="mt-3 text-sm leading-6 text-beige/65">
+          <h2 className="font-heading text-3xl">{home("newsletterTitle")}</h2>
+          <p className="mt-3 text-sm leading-6 text-muted-foreground">
             {home("newsletterSubtitle")}
           </p>
           <form
@@ -187,18 +138,15 @@ export function SiteFooter() {
               required
               aria-label="Email"
               placeholder={home("newsletterPlaceholder")}
-              className="h-11 rounded-none border-champagne/30 bg-white/5 text-beige placeholder:text-beige/40"
+              className="h-11 rounded-none bg-background"
             />
-            <Button
-              type="submit"
-              className="h-11 rounded-none bg-champagne px-5 text-ink hover:bg-champagne/85"
-            >
+            <Button type="submit" className="h-11 rounded-none px-5">
               {home("newsletterCta")}
             </Button>
           </form>
         </div>
       </div>
-      <div className="page-gutter flex flex-col items-center justify-between gap-3 border-t border-white/10 py-5 text-center text-[10px] uppercase tracking-[0.14em] text-beige/50 sm:flex-row sm:text-left">
+      <div className="page-gutter flex flex-col items-center justify-between gap-3 border-t py-5 text-center text-[10px] uppercase tracking-[0.14em] text-muted-foreground sm:flex-row sm:text-left">
         <p>{footer("rights", { year: new Date().getFullYear() })}</p>
         <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
           <Link href="/terms" className="hover:text-champagne">

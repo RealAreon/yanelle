@@ -14,6 +14,7 @@ export type Testimonial = {
   quote: LocalizedString;
   name: string;
   role: LocalizedString;
+  rating: 4 | 5;
 };
 
 export type JournalPost = {
@@ -46,6 +47,7 @@ export const testimonials: Testimonial[] = [
     ),
     name: "Olena M.",
     role: L("Київ", "Kyiv", "Kijów", "Kyiv", "Kiew", "Kyiv"),
+    rating: 5,
   },
   {
     id: "t2",
@@ -59,6 +61,7 @@ export const testimonials: Testimonial[] = [
     ),
     name: "Maria K.",
     role: L("Варшава", "Warsaw", "Warszawa", "Varsovie", "Warschau", "Varsovia"),
+    rating: 5,
   },
   {
     id: "t3",
@@ -72,6 +75,77 @@ export const testimonials: Testimonial[] = [
     ),
     name: "Anastasiia R.",
     role: L("Львів", "Lviv", "Lwów", "Lviv", "Lwiw", "Leópolis"),
+    rating: 5,
+  },
+  {
+    id: "t4",
+    quote: L(
+      "Купила кашемірове плаття — сідає м'яко, без зайвого блиску. Саме той тихий люкс, якого шукала.",
+      "Bought the cashmere dress — soft fit, no unnecessary shine. Exactly the quiet luxury I was looking for.",
+      "Kupiłam sukienkę z kaszmiru — miękkie dopasowanie, bez zbędnego blasku. Dokładnie ten cichy luksus.",
+      "J'ai pris la robe en cachemire — tombé doux, sans éclat inutile. Exactement le luxe discret voulu.",
+      "Das Kaschmirkleid sitzt weich, ohne unnötigen Glanz. Genau der ruhige Luxus, den ich suchte.",
+      "El vestido de cachemira cae suave, sin brillo innecesario. Exactamente el lujo silencioso que buscaba.",
+    ),
+    name: "Iryna S.",
+    role: L("Одеса", "Odesa", "Odessa", "Odessa", "Odessa", "Odesa"),
+    rating: 5,
+  },
+  {
+    id: "t5",
+    quote: L(
+      "Сервіс уважний, консультація по розміру допомогла. Віднімаю зірку лише за довше очікування доставки.",
+      "Attentive service, the size advice helped. One star less only for a slightly longer delivery wait.",
+      "Uważna obsługa, konsultacja rozmiaru pomogła. Jedną gwiazdkę mniej tylko za dłuższe czekanie.",
+      "Service attentif, le conseil taille a aidé. Une étoile en moins seulement pour l'attente livraison.",
+      "Aufmerksamer Service, die Größenberatung half. Ein Stern weniger nur wegen längerer Lieferung.",
+      "Servicio atento, el consejo de talla ayudó. Una estrella menos solo por una entrega más lenta.",
+    ),
+    name: "Sofiia P.",
+    role: L("Харків", "Kharkiv", "Charków", "Kharkiv", "Charkiw", "Járkov"),
+    rating: 4,
+  },
+  {
+    id: "t6",
+    quote: L(
+      "Пальто тримає форму другий сезон. Шов і підкладка — без претензій, просто якісно.",
+      "The coat still holds its shape in the second season. Seams and lining — unshowy, simply well made.",
+      "Płaszcz trzyma formę drugi sezon. Szwy i podszewka — bez pretensji, po prostu solidnie.",
+      "Le manteau tient la forme au second saison. Coutures et doublure — sans ostentation, juste bien faits.",
+      "Der Mantel hält die Form in der zweiten Saison. Nähte und Futter — schlicht und gut gemacht.",
+      "El abrigo mantiene la forma en la segunda temporada. Costuras y forro — sin alarde, bien hechos.",
+    ),
+    name: "Kateryna L.",
+    role: L("Дніпро", "Dnipro", "Dniepr", "Dnipro", "Dnipro", "Dnipró"),
+    rating: 5,
+  },
+  {
+    id: "t7",
+    quote: L(
+      "Lookbook і сайт — спокійні. Замовлення прийшло акуратно, але колір сумки трохи тепліший за фото.",
+      "Lookbook and site feel calm. The order arrived neatly, though the bag color is a touch warmer than the photo.",
+      "Lookbook i strona — spokojne. Zamówienie przyszło starannie, kolor torebki trochę cieplejszy niż na zdjęciu.",
+      "Lookbook et site apaisants. Commande soignée, la couleur du sac un peu plus chaude que sur la photo.",
+      "Lookbook und Seite wirken ruhig. Bestellung sauber, Taschenfarbe etwas wärmer als auf dem Foto.",
+      "Lookbook y sitio serenos. Pedido cuidado; el color del bolso un poco más cálido que en la foto.",
+    ),
+    name: "Yuliia N.",
+    role: L("Вінниця", "Vinnytsia", "Winnica", "Vinnytsia", "Winnyzja", "Vínnitsa"),
+    rating: 4,
+  },
+  {
+    id: "t8",
+    quote: L(
+      "Подарунок для мами: пакування без зайвого шуму, річ відчувається зібраною з увагою. Дякую.",
+      "A gift for my mother: quiet packaging, a piece that feels assembled with care. Thank you.",
+      "Prezent dla mamy: spokojne pakowanie, rzecz złożona z uwagą. Dziękuję.",
+      "Cadeau pour ma mère : emballage discret, pièce assemblée avec soin. Merci.",
+      "Geschenk für meine Mutter: ruhige Verpackung, mit Sorgfalt gemacht. Danke.",
+      "Regalo para mi madre: embalaje sereno, pieza hecha con cuidado. Gracias.",
+    ),
+    name: "Daryna V.",
+    role: L("Чернівці", "Chernivtsi", "Czerniowce", "Tchernivtsi", "Tscherniwzi", "Chernivtsí"),
+    rating: 5,
   },
 ];
 

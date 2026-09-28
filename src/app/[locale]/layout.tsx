@@ -6,6 +6,7 @@ import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { PageTransition } from "@/components/layout/page-transition";
 import { CartDrawer } from "@/components/store/cart-drawer";
+import { FlyToCartLayer } from "@/components/store/fly-to-cart";
 import { Toaster } from "@/components/ui/sonner";
 
 type Props = {
@@ -33,6 +34,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         </main>
         <SiteFooter />
         <CartDrawer />
+        <FlyToCartLayer />
         <Toaster />
       </div>
     </NextIntlClientProvider>

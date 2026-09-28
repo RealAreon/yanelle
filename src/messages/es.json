@@ -95,12 +95,21 @@
     "novaPoshtaHint": "Envío a sucursal o taquilla Nova Poshta en Ucrania. Gratuito.",
     "novaPoshtaBranch": "Sucursal / taquilla Nova Poshta",
     "novaPoshtaBranchPlaceholder": "p. ej. sucursal n.º 12, calle Khreshchatyk 22",
-    "payOnline": "Pagar con tarjeta online",
-    "payOnlineHint": "La pasarela de tarjeta se conectará más adelante. El pedido se guarda como demo.",
+    "payOnline": "Tarjeta / Apple Pay / Google Pay",
+    "payOnlineHint": "Visa, Mastercard, Apple Pay y Google Pay vía Stripe. Tras confirmar los datos se abre el formulario de pago.",
+    "paySecureTitle": "Pago seguro",
+    "paySecureHint": "Los datos de la tarjeta los procesa Stripe. No los almacenamos.",
+    "orPayWithCard": "o con tarjeta",
+    "payNow": "Pagar",
+    "paying": "Pagando…",
+    "backToDetails": "Atrás",
+    "continueToPayment": "Continuar al pago",
+    "paymentFailed": "El pago no se completó. Inténtelo de nuevo.",
+    "paymentSetupError": "Pagos no configurados. Añada las claves Stripe en .env.",
     "payCod": "Pago contra reembolso",
     "payCodHint": "Pago al recoger en Nova Poshta. Las tarifas del transportista las paga el destinatario.",
-    "placeOrder": "Confirmar pedido",
-    "placing": "Confirmando…",
+    "placeOrder": "Continuar al pago",
+    "placing": "Creando pedido…",
     "name": "Nombre completo",
     "firstName": "Nombre",
     "lastName": "Apellido",
@@ -130,10 +139,10 @@
   },
   "shipping": {
     "title": "Envío y devoluciones",
-    "delivery": "Enviamos por Ucrania con Nova Poshta a sucursales o taquillas. Pago contra reembolso o con tarjeta online. Envío internacional bajo petición.",
+    "delivery": "Enviamos por Ucrania con Nova Poshta a sucursales o taquillas. Pago con tarjeta online. Envío internacional bajo petición.",
     "complimentary": "Envío gratuito con Nova Poshta en todos los pedidos.",
-    "returns": "Devoluciones en 14 días si se conservan etiquetas, embalaje y estado original.",
-    "returnsVideo": "En pagos con tarjeta, las devoluciones solo se aceptan con un vídeo de unboxing sin editar del paquete."
+    "returns": "Devoluciones en 2 días si se conservan etiquetas, embalaje y estado original.",
+    "returnsVideo": "Las devoluciones solo se aceptan con un vídeo de unboxing sin editar del paquete."
   },
   "contact": {
     "title": "Contacto",
@@ -170,11 +179,11 @@
         },
         {
           "title": "Pedidos y pago",
-          "body": "Los pedidos se realizan desde la bolsa. Envío principal: Nova Poshta. Pago contra reembolso o online cuando se conecte la pasarela.\n\nPodemos contactarle para confirmar el pedido. ＹＡＮÈＬＬＥ puede rechazar un pedido por error de precio, stock o sospecha de fraude."
+          "body": "Los pedidos se realizan desde la bolsa. Envío principal: Nova Poshta. Pago con tarjeta online.\n\nPodemos contactarle para confirmar el pedido. ＹＡＮÈＬＬＥ puede rechazar un pedido por error de precio, stock o sospecha de fraude."
         },
         {
           "title": "Envío y devoluciones",
-          "body": "Las condiciones están en la página de Envío. Devolución en 14 días si se conservan etiquetas, embalaje y estado. En pagos con tarjeta puede pedirse vídeo de unboxing."
+          "body": "Las condiciones están en la página de Envío. Devolución en 2 días si se conservan etiquetas, embalaje y estado. Puede pedirse vídeo de unboxing."
         },
         {
           "title": "Propiedad intelectual",

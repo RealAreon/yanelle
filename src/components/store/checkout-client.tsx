@@ -3,23 +3,27 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { toast } from "sonner";
-import { useRouter } from "@/i18n/navigation";
 import { useHydrated } from "@/lib/use-hydrated";
 import { useCart } from "@/store/cart";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { CheckoutPayment, PaymentMethodBadges } from "./checkout-payment";
 import { Price } from "./price";
+
+type PaymentSession = {
+  clientSecret: string;
+  publishableKey: string;
+  orderId: string;
+};
 
 export function CheckoutClient({ locale }: { locale: string }) {
   const t = useTranslations("checkout");
-  const router = useRouter();
   const storedItems = useCart((state) => state.items);
-  const clear = useCart((state) => state.clear);
   const subtotal = useCart((state) => state.subtotalUAH());
   const items = useHydrated() ? storedItems : [];
   const [submitting, setSubmitting] = useState(false);
-  const [paymentMethod, setPaymentMethod] = useState<"cod" | "online">("cod");
+  const [payment, setPayment] = useState<PaymentSession | null>(null);
 
   async function submit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -37,7 +41,7 @@ export function CheckoutClient({ locale }: { locale: string }) {
         notes: String(form.get("notes") ?? ""),
       },
       shippingMethod: "nova_poshta",
-      paymentMethod: String(form.get("paymentMethod")),
+      paymentMethod: "online",
       locale,
       items,
     };
@@ -49,13 +53,74 @@ export function CheckoutClient({ locale }: { locale: string }) {
       });
       if (!response.ok) throw new Error(t("submitError"));
       const order = (await response.json()) as { id: string };
-      clear();
-      router.push({ pathname: "/order/success", query: { orderId: order.id } });
+
+      const intentRes = await fetch("/api/stripe/create-payment-intent", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ orderId: order.id }),
+      });
+      const intentBody = (await intentRes.json()) as {
+        clientSecret?: string;
+        publishableKey?: string;
+        error?: string;
+      };
+      if (!intentRes.ok || !intentBody.clientSecret || !intentBody.publishableKey) {
+        throw new Error(intentBody.error || t("paymentSetupError"));
+      }
+
+      setPayment({
+        clientSecret: intentBody.clientSecret,
+        publishableKey: intentBody.publishableKey,
+        orderId: order.id,
+      });
+      toast.success(t("continueToPayment"));
     } catch (error) {
       toast.error(error instanceof Error ? error.message : t("submitError"));
     } finally {
       setSubmitting(false);
     }
+  }
+
+  if (payment) {
+    return (
+      <div className="grid gap-12 lg:grid-cols-[1fr_380px]">
+        <div className="space-y-6">
+          <div>
+            <p className="text-[10px] uppercase tracking-[0.22em] text-champagne">
+              {t("payment")}
+            </p>
+            <h2 className="mt-3 font-heading text-4xl">{t("paySecureTitle")}</h2>
+          </div>
+          <CheckoutPayment
+            clientSecret={payment.clientSecret}
+            publishableKey={payment.publishableKey}
+            orderId={payment.orderId}
+            onBack={() => setPayment(null)}
+          />
+        </div>
+        <aside className="h-fit bg-beige-deep/50 p-6 lg:sticky lg:top-28">
+          <h2 className="font-heading text-3xl">{t("orderSummary")}</h2>
+          <div className="mt-5 divide-y">
+            {items.map((item) => (
+              <div
+                key={item.variantId}
+                className="flex justify-between gap-4 py-4 text-sm"
+              >
+                <span>
+                  {item.name} × {item.quantity}
+                </span>
+                <Price amountUAH={item.priceUAH * item.quantity} locale={locale} />
+              </div>
+            ))}
+          </div>
+          <div className="mt-4 flex justify-between border-t pt-5 font-medium">
+            <span>{t("total")}</span>
+            <Price amountUAH={subtotal} locale={locale} />
+          </div>
+          <p className="mt-3 text-xs text-muted-foreground">{t("freeShipping")}</p>
+        </aside>
+      </div>
+    );
   }
 
   return (
@@ -66,7 +131,13 @@ export function CheckoutClient({ locale }: { locale: string }) {
           <div className="mt-6 grid gap-5 sm:grid-cols-2">
             <Field name="name" label={t("name")} required />
             <Field name="phone" label={t("phone")} type="tel" required />
-            <Field name="email" label={t("email")} type="email" required className="sm:col-span-2" />
+            <Field
+              name="email"
+              label={t("email")}
+              type="email"
+              required
+              className="sm:col-span-2"
+            />
           </div>
         </fieldset>
 
@@ -94,7 +165,7 @@ export function CheckoutClient({ locale }: { locale: string }) {
                 name="notes"
                 rows={4}
                 placeholder={t("notesPlaceholder")}
-                className="mt-2 w-full rounded-none border bg-transparent p-3 text-sm outline-none focus:border-champagne"
+                className="mt-2 w-full resize-none rounded-none border bg-transparent p-3 text-sm outline-none focus:border-champagne"
               />
             </label>
           </div>
@@ -102,35 +173,12 @@ export function CheckoutClient({ locale }: { locale: string }) {
 
         <fieldset>
           <legend className="font-heading text-3xl">{t("payment")}</legend>
-          <div className="mt-5 grid gap-3">
-            <label className="flex cursor-pointer gap-3 border border-border/80 p-4 text-sm transition-colors has-[:checked]:border-champagne">
-              <input
-                type="radio"
-                name="paymentMethod"
-                value="cod"
-                checked={paymentMethod === "cod"}
-                onChange={() => setPaymentMethod("cod")}
-                className="mt-1"
-              />
-              <span>
-                <strong className="block">{t("payCod")}</strong>
-                <small className="mt-1 block text-muted-foreground">{t("payCodHint")}</small>
-              </span>
-            </label>
-            <label className="flex cursor-pointer gap-3 border border-border/80 p-4 text-sm transition-colors has-[:checked]:border-champagne">
-              <input
-                type="radio"
-                name="paymentMethod"
-                value="online"
-                checked={paymentMethod === "online"}
-                onChange={() => setPaymentMethod("online")}
-                className="mt-1"
-              />
-              <span>
-                <strong className="block">{t("payOnline")}</strong>
-                <small className="mt-1 block text-muted-foreground">{t("payOnlineHint")}</small>
-              </span>
-            </label>
+          <div className="mt-5 space-y-4 border border-border/80 p-4 text-sm">
+            <PaymentMethodBadges />
+            <div>
+              <strong className="block">{t("payOnline")}</strong>
+              <p className="mt-1 text-muted-foreground">{t("payOnlineHint")}</p>
+            </div>
           </div>
         </fieldset>
       </div>
@@ -139,7 +187,10 @@ export function CheckoutClient({ locale }: { locale: string }) {
         <h2 className="font-heading text-3xl">{t("orderSummary")}</h2>
         <div className="mt-5 divide-y">
           {items.map((item) => (
-            <div key={item.variantId} className="flex justify-between gap-4 py-4 text-sm">
+            <div
+              key={item.variantId}
+              className="flex justify-between gap-4 py-4 text-sm"
+            >
               <span>
                 {item.name} × {item.quantity}
               </span>

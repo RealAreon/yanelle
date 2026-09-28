@@ -1,6 +1,6 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { products } from "@/data/products";
 import { CatalogClient } from "@/components/store/catalog-client";
+import { getCatalogProducts } from "@/lib/shopify";
 
 export default async function ShopPage({
   params,
@@ -13,6 +13,7 @@ export default async function ShopPage({
   const filters = await searchParams;
   setRequestLocale(locale);
   const t = await getTranslations("catalog");
+  const products = await getCatalogProducts();
 
   return (
     <div className="page-gutter py-14 lg:py-20">

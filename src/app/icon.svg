@@ -1,7 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="YANELLE">
-  <rect width="64" height="64" rx="12" fill="#2d1b17"/>
-  <path
-    fill="#d4af74"
-    d="M14 12h9.2L32 30.8 40.8 12H50L35.4 36.2V52h-6.8V36.2L14 12Z"
-  />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="12" fill="#2b1d1d"/>
+  <text x="32" y="42" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="32" font-weight="500" fill="#c9a56a">Y</text>
 </svg>

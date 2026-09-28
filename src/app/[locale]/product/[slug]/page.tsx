@@ -1,12 +1,16 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
-import { getProductBySlug, products } from "@/data/products";
 import { tLocal } from "@/lib/locale-text";
+import {
+  getCatalogProductBySlug,
+  getCatalogProducts,
+} from "@/lib/shopify";
 import { ProductPurchase } from "@/components/store/product-purchase";
 import { ProductCard } from "@/components/store/product-card";
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
+  const products = await getCatalogProducts();
   return products.map((product) => ({ slug: product.slug }));
 }
 
@@ -17,7 +21,10 @@ export default async function ProductPage({
 }) {
   const { locale, slug } = await params;
   setRequestLocale(locale);
-  const product = getProductBySlug(slug);
+  const [product, products] = await Promise.all([
+    getCatalogProductBySlug(slug),
+    getCatalogProducts(),
+  ]);
   if (!product) notFound();
   const related = products
     .filter((item) => item.id !== product.id && item.category === product.category)

@@ -55,45 +55,45 @@
 }
 
 :root {
-  /* Quiet luxury — espresso nav, cream ground, champagne + mist accents */
-  --background: #f7f0e6;
-  --foreground: #2d1b17;
-  --card: #f3eade;
-  --card-foreground: #2d1b17;
-  --popover: #f3eade;
-  --popover-foreground: #2d1b17;
-  --primary: #2d1b17;
-  --primary-foreground: #f7f0e6;
-  --secondary: #fde3a7;
-  --secondary-foreground: #2d1b17;
-  --muted: #efe4d4;
-  --muted-foreground: #6e574c;
-  --accent: #bdd4e7;
-  --accent-foreground: #2d1b17;
-  --champagne: #d4af74;
-  --champagne-foreground: #2d1b17;
-  --beige: #f7f0e6;
-  --beige-deep: #f2daa6;
-  --mist: #bdd4e7;
-  --ink: #2d1b17;
+  /* Quiet luxury — soft near-white cream, chocolate, soft gold + mist */
+  --background: #fcfaf6;
+  --foreground: #2b1d1d;
+  --card: #fffcf8;
+  --card-foreground: #2b1d1d;
+  --popover: #fffcf8;
+  --popover-foreground: #2b1d1d;
+  --primary: #2b1d1d;
+  --primary-foreground: #fcfaf6;
+  --secondary: #f7edd4;
+  --secondary-foreground: #2b1d1d;
+  --muted: #f6f1e8;
+  --muted-foreground: #6e5c52;
+  --accent: #d4e4ee;
+  --accent-foreground: #2b1d1d;
+  --champagne: #c9a56a;
+  --champagne-foreground: #2b1d1d;
+  --beige: #fcfaf6;
+  --beige-deep: #f4ecde;
+  --mist: #c8d8e4;
+  --ink: #2b1d1d;
   --destructive: #b54a3f;
-  --border: #e2d2bc;
-  --input: #e2d2bc;
-  --ring: #d4af74;
-  --chart-1: #d4af74;
-  --chart-2: #bdd4e7;
-  --chart-3: #6e574c;
-  --chart-4: #fde3a7;
-  --chart-5: #2d1b17;
+  --border: #ebe0d0;
+  --input: #ebe0d0;
+  --ring: #c9a56a;
+  --chart-1: #c9a56a;
+  --chart-2: #c8d8e4;
+  --chart-3: #6e5c52;
+  --chart-4: #f7edd4;
+  --chart-5: #2b1d1d;
   --radius: 0.25rem;
-  --sidebar: #f3eade;
-  --sidebar-foreground: #2d1b17;
-  --sidebar-primary: #2d1b17;
-  --sidebar-primary-foreground: #f7f0e6;
-  --sidebar-accent: #fde3a7;
-  --sidebar-accent-foreground: #2d1b17;
-  --sidebar-border: #e2d2bc;
-  --sidebar-ring: #d4af74;
+  --sidebar: #fffcf8;
+  --sidebar-foreground: #2b1d1d;
+  --sidebar-primary: #2b1d1d;
+  --sidebar-primary-foreground: #fcfaf6;
+  --sidebar-accent: #f7edd4;
+  --sidebar-accent-foreground: #2b1d1d;
+  --sidebar-border: #ebe0d0;
+  --sidebar-ring: #c9a56a;
 }
 
 @layer base {
@@ -115,6 +115,27 @@
   .font-heading {
     font-family: var(--font-serif), ui-serif, Georgia, serif;
   }
+  /* Kill browser autofill blue/yellow wash */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    -webkit-text-fill-color: var(--foreground) !important;
+    caret-color: var(--foreground);
+    box-shadow: 0 0 0 1000px var(--background) inset !important;
+    -webkit-box-shadow: 0 0 0 1000px var(--background) inset !important;
+    transition: background-color 99999s ease-out 0s;
+    background-color: transparent !important;
+  }
+  textarea {
+    resize: none;
+  }
 }
 
 @layer utilities {
@@ -124,15 +145,22 @@
   .brand-lettering {
     letter-spacing: 0.14em;
     white-space: nowrap;
+    /* Optical center: letter-spacing adds trailing space after last glyph */
+    padding-inline-start: 0.14em;
+    margin-inline-end: -0.14em;
   }
   @media (min-width: 640px) {
     .brand-lettering {
       letter-spacing: 0.24em;
+      padding-inline-start: 0.24em;
+      margin-inline-end: -0.24em;
     }
   }
   @media (min-width: 1024px) {
     .brand-lettering {
       letter-spacing: 0.32em;
+      padding-inline-start: 0.32em;
+      margin-inline-end: -0.32em;
     }
   }
   .page-gutter {
@@ -173,6 +201,32 @@
       var(--champagne) 80%,
       transparent
     );
+  }
+  /* Soft film grain — luxury paper feel */
+  .bg-grain {
+    position: relative;
+    isolation: isolate;
+  }
+  .bg-grain::before {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    opacity: 0.22;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 180px 180px;
+  }
+  .bg-grain > * {
+    position: relative;
+    z-index: 1;
+  }
+  .bg-journal-lux {
+    background:
+      radial-gradient(ellipse 80% 60% at 12% 0%, rgba(200, 216, 228, 0.35), transparent 55%),
+      radial-gradient(ellipse 70% 50% at 100% 100%, rgba(201, 165, 106, 0.12), transparent 50%),
+      linear-gradient(180deg, #faf7f0 0%, var(--background) 45%, #f7f3ea 100%);
   }
 }
 

@@ -95,12 +95,21 @@
     "novaPoshtaHint": "Livraison vers un bureau ou un casiers Nova Poshta en Ukraine. Offerte.",
     "novaPoshtaBranch": "Bureau / casier Nova Poshta",
     "novaPoshtaBranchPlaceholder": "ex. bureau n°12, rue Khrechtchatyk 22",
-    "payOnline": "Payer par carte en ligne",
-    "payOnlineHint": "La passerelle carte sera connectée plus tard. La commande est enregistrée en démo.",
+    "payOnline": "Carte / Apple Pay / Google Pay",
+    "payOnlineHint": "Visa, Mastercard, Apple Pay et Google Pay via Stripe. Après confirmation, le formulaire de paiement s'ouvre.",
+    "paySecureTitle": "Paiement sécurisé",
+    "paySecureHint": "Les données carte sont traitées par Stripe. Nous ne les stockons pas.",
+    "orPayWithCard": "ou par carte",
+    "payNow": "Payer",
+    "paying": "Paiement…",
+    "backToDetails": "Retour",
+    "continueToPayment": "Passage au paiement",
+    "paymentFailed": "Paiement non terminé. Réessayez.",
+    "paymentSetupError": "Paiements non configurés. Ajoutez les clés Stripe dans .env.",
     "payCod": "Paiement à la livraison",
     "payCodHint": "Paiement à la réception au bureau Nova Poshta. Les frais transporteur sont à la charge du destinataire.",
-    "placeOrder": "Confirmer la commande",
-    "placing": "Envoi en cours…",
+    "placeOrder": "Continuer vers le paiement",
+    "placing": "Création de la commande…",
     "name": "Nom complet",
     "firstName": "Prénom",
     "lastName": "Nom",
@@ -130,10 +139,10 @@
   },
   "shipping": {
     "title": "Livraison et retours",
-    "delivery": "Livraison en Ukraine via Nova Poshta (bureaux ou casiers). Paiement à la livraison ou par carte en ligne. International sur demande.",
+    "delivery": "Livraison en Ukraine via Nova Poshta (bureaux ou casiers). Paiement par carte en ligne. International sur demande.",
     "complimentary": "Livraison Nova Poshta offerte pour toute commande.",
-    "returns": "Retours sous 14 jours, étiquettes et emballage d'origine conservés.",
-    "returnsVideo": "Pour les paiements par carte, le retour n'est accepté qu'avec une vidéo de déballage non montée du colis."
+    "returns": "Retours sous 2 jours, étiquettes et emballage d'origine conservés.",
+    "returnsVideo": "Le retour n'est accepté qu'avec une vidéo de déballage non montée du colis."
   },
   "contact": {
     "title": "Contact",
@@ -170,11 +179,11 @@
         },
         {
           "title": "Commandes et paiement",
-          "body": "Les commandes passent par le panier. Livraison principale : Nova Poshta. Paiement à la livraison ou en ligne lorsque la passerelle sera connectée.\n\nNous pouvons vous contacter pour confirmer une commande. ＹＡＮÈＬＬＥ peut refuser une commande en cas d'erreur de prix, de stock ou de suspicion de fraude."
+          "body": "Les commandes passent par le panier. Livraison principale : Nova Poshta. Paiement par carte en ligne.\n\nNous pouvons vous contacter pour confirmer une commande. ＹＡＮÈＬＬＥ peut refuser une commande en cas d'erreur de prix, de stock ou de suspicion de fraude."
         },
         {
           "title": "Livraison et retours",
-          "body": "Les conditions sont décrites sur la page Livraison. Retours sous 14 jours si étiquettes, emballage et état sont conservés. Paiement carte : vidéo de déballage possible."
+          "body": "Les conditions sont décrites sur la page Livraison. Retours sous 2 jours si étiquettes, emballage et état sont conservés. Une vidéo de déballage peut être demandée."
         },
         {
           "title": "Propriété intellectuelle",

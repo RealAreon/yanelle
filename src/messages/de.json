@@ -95,12 +95,21 @@
     "novaPoshtaHint": "Lieferung an eine Nova-Poshta-Filiale oder ein Paketfach in der Ukraine. Kostenlos.",
     "novaPoshtaBranch": "Nova-Poshta-Filiale / Paketfach",
     "novaPoshtaBranchPlaceholder": "z. B. Filiale Nr. 12, Chreschtschatyk 22",
-    "payOnline": "Online mit Karte zahlen",
-    "payOnlineHint": "Kartenzahlung folgt später. Die Bestellung wird als Demo gespeichert.",
+    "payOnline": "Karte / Apple Pay / Google Pay",
+    "payOnlineHint": "Visa, Mastercard, Apple Pay und Google Pay über Stripe. Nach Bestätigung öffnet sich das Zahlungsformular.",
+    "paySecureTitle": "Sichere Zahlung",
+    "paySecureHint": "Kartendaten werden von Stripe verarbeitet. Wir speichern sie nicht.",
+    "orPayWithCard": "oder mit Karte",
+    "payNow": "Bezahlen",
+    "paying": "Zahlung…",
+    "backToDetails": "Zurück",
+    "continueToPayment": "Weiter zur Zahlung",
+    "paymentFailed": "Zahlung nicht abgeschlossen. Bitte erneut versuchen.",
+    "paymentSetupError": "Zahlungen nicht konfiguriert. Stripe-Schlüssel in .env setzen.",
     "payCod": "Zahlung bei Lieferung",
     "payCodHint": "Zahlung bei Abholung in der Nova-Poshta-Filiale. Transporteurgebühren zahlt der Empfänger.",
-    "placeOrder": "Bestellung aufgeben",
-    "placing": "Wird aufgegeben…",
+    "placeOrder": "Zur Zahlung",
+    "placing": "Bestellung wird erstellt…",
     "name": "Vollständiger Name",
     "firstName": "Vorname",
     "lastName": "Nachname",
@@ -130,10 +139,10 @@
   },
   "shipping": {
     "title": "Versand & Rückgabe",
-    "delivery": "Versand in der Ukraine mit Nova Poshta an Filialen oder Paketfächer. Zahlung bei Lieferung oder online per Karte. International auf Anfrage.",
+    "delivery": "Versand in der Ukraine mit Nova Poshta an Filialen oder Paketfächer. Zahlung online per Karte. International auf Anfrage.",
     "complimentary": "Kostenloser Nova-Poshta-Versand für jede Bestellung.",
-    "returns": "Rückgabe innerhalb von 14 Tagen bei erhaltenen Etiketten, Verpackung und einwandfreiem Zustand.",
-    "returnsVideo": "Bei Kartenzahlungen werden Rücksendungen nur mit einem ungeschnittenen Auspackvideo der Sendung akzeptiert."
+    "returns": "Rückgabe innerhalb von 2 Tagen bei erhaltenen Etiketten, Verpackung und einwandfreiem Zustand.",
+    "returnsVideo": "Rücksendungen nur mit einem ungeschnittenen Auspackvideo der Sendung."
   },
   "contact": {
     "title": "Kontakt",
@@ -170,11 +179,11 @@
         },
         {
           "title": "Bestellung und Zahlung",
-          "body": "Bestellungen erfolgen über den Warenkorb. Hauptversand: Nova Poshta. Zahlung bei Lieferung oder online, sobald das Gateway verbunden ist.\n\nWir können Sie zur Bestätigung kontaktieren. ＹＡＮÈＬＬＥ kann Bestellungen bei Preisfehlern, Lagerproblemen oder Betrugsverdacht ablehnen."
+          "body": "Bestellungen erfolgen über den Warenkorb. Hauptversand: Nova Poshta. Zahlung online per Karte.\n\nWir können Sie zur Bestätigung kontaktieren. ＹＡＮÈＬＬＥ kann Bestellungen bei Preisfehlern, Lagerproblemen oder Betrugsverdacht ablehnen."
         },
         {
           "title": "Versand und Rückgabe",
-          "body": "Details auf der Versandseite. Rückgabe innerhalb von 14 Tagen bei erhaltenen Etiketten, Verpackung und Zustand. Bei Kartenzahlung ggf. Auspackvideo erforderlich."
+          "body": "Details auf der Versandseite. Rückgabe innerhalb von 2 Tagen bei erhaltenen Etiketten, Verpackung und Zustand. Ggf. Auspackvideo erforderlich."
         },
         {
           "title": "Geistiges Eigentum",

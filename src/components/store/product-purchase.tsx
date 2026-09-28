@@ -114,8 +114,13 @@ export function ProductPurchase({
           className="size-12 rounded-none"
           onClick={() => toggle(product.id)}
           aria-label="Toggle wishlist"
+          aria-pressed={wished}
         >
-          <Heart className={wished ? "fill-ink" : ""} />
+          <Heart
+            className={`transition-all duration-500 ease-out ${
+              wished ? "fill-[#c23b3b] text-[#c23b3b]" : "fill-transparent"
+            }`}
+          />
         </Button>
       </div>
       <p className="mt-4 text-center text-[10px] uppercase tracking-[0.16em] text-muted-foreground">

@@ -95,20 +95,20 @@ export function SiteHeader() {
         value={locale}
         options={localeOptions}
         onChange={changeLocale}
-        className="text-ink/75 hover:text-champagne"
+        className="text-foreground/70 hover:text-champagne"
       />
       <ElegantSelect
         ariaLabel="Currency"
         value={currency}
         options={currencyOptions}
         onChange={(value) => setCurrency(value as Currency)}
-        className="text-ink/75 hover:text-champagne"
+        className="text-foreground/70 hover:text-champagne"
       />
     </div>
   );
 
   return (
-    <header className="sticky top-0 z-40 border-b border-ink/10 bg-[#e8dccb] text-ink backdrop-blur-md">
+    <header className="sticky top-0 z-40 border-b border-foreground/10 bg-beige/90 text-foreground backdrop-blur-md">
       <div className="page-gutter grid h-16 grid-cols-[1fr_auto_1fr] items-center lg:h-20">
         <nav
           className="hidden items-center gap-7 lg:flex"
@@ -118,7 +118,7 @@ export function SiteHeader() {
             <Link
               key={href}
               href={href}
-              className="text-[11px] uppercase tracking-[0.14em] text-ink/80 underline-offset-8 decoration-champagne transition-colors duration-300 hover:text-ink hover:underline"
+              className="text-[11px] uppercase tracking-[0.14em] text-foreground/80 underline-offset-8 decoration-champagne transition-colors duration-300 hover:text-foreground hover:underline"
             >
               {t(key)}
             </Link>
@@ -128,7 +128,7 @@ export function SiteHeader() {
           <Sheet>
             <SheetTrigger
               aria-label="Menu"
-              className="inline-flex size-10 cursor-pointer items-center justify-center text-ink transition-opacity duration-300 hover:opacity-70"
+              className="inline-flex size-10 cursor-pointer items-center justify-center text-foreground transition-opacity duration-300 hover:opacity-70"
             >
               <Menu size={20} strokeWidth={1.5} />
             </SheetTrigger>
@@ -137,7 +137,7 @@ export function SiteHeader() {
               className="w-full max-w-sm border-r border-border/70 bg-beige px-8 text-foreground duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
             >
               <SheetHeader className="px-0 py-8">
-                <SheetTitle className="brand-lettering text-lg tracking-[0.35em] text-ink">
+                <SheetTitle className="brand-lettering text-lg tracking-[0.35em] text-foreground">
                   <SheetClose
                     render={
                       <Link
@@ -172,7 +172,7 @@ export function SiteHeader() {
 
         <Link
           href="/"
-          className="brand-lettering max-w-[46vw] justify-self-center overflow-hidden text-ellipsis whitespace-nowrap font-heading text-[0.95rem] font-medium text-ink transition-opacity duration-300 hover:opacity-80 sm:max-w-none sm:text-lg lg:text-xl"
+          className="brand-lettering max-w-[46vw] justify-self-center overflow-hidden text-ellipsis whitespace-nowrap font-heading text-[0.95rem] font-medium text-foreground transition-opacity duration-300 hover:opacity-80 sm:max-w-none sm:text-lg lg:text-xl"
         >
           ＹＡＮÈＬＬＥ
         </Link>
@@ -182,29 +182,44 @@ export function SiteHeader() {
           <Link
             href={{ pathname: "/shop", query: { q: "" } }}
             aria-label={t("search")}
-            className="inline-flex size-10 items-center justify-center text-ink transition-opacity duration-300 hover:opacity-70"
+            className="inline-flex size-10 items-center justify-center text-foreground transition-opacity duration-300 hover:opacity-70"
           >
             <Search size={18} strokeWidth={1.5} />
           </Link>
           <Link
             href="/wishlist"
             aria-label={`${t("wishlist")} (${wishlistCount})`}
-            className="hidden size-10 items-center justify-center text-ink transition-opacity duration-300 hover:opacity-70 sm:inline-flex"
+            data-wishlist-target
+            className="relative inline-flex size-10 items-center justify-center text-foreground transition-opacity duration-300 hover:opacity-70"
           >
-            <Heart size={18} strokeWidth={1.5} />
+            <Heart
+              size={18}
+              strokeWidth={1.5}
+              className={`transition-all duration-500 ease-out ${
+                wishlistCount > 0
+                  ? "fill-[#c23b3b] text-[#c23b3b]"
+                  : "fill-transparent"
+              }`}
+            />
+            {wishlistCount > 0 && (
+              <span className="absolute right-0 top-0 flex size-4 items-center justify-center rounded-full bg-[#c23b3b] text-[9px] text-white">
+                {wishlistCount > 9 ? "9+" : wishlistCount}
+              </span>
+            )}
           </Link>
           <Button
             type="button"
             variant="ghost"
             size="icon-lg"
+            data-cart-target
             aria-label={`${t("cart")} (${cartCount})`}
             onClick={() => setCartOpen(true)}
-            className="relative text-ink transition-opacity duration-300 hover:bg-ink/5 hover:opacity-70 hover:text-ink"
+            className="relative text-foreground transition-opacity duration-300 hover:bg-foreground/5 hover:opacity-70 hover:text-foreground"
           >
             <ShoppingBag />
             {cartCount > 0 && (
-              <span className="absolute right-0 top-0 flex size-4 items-center justify-center rounded-full bg-ink text-[9px] text-beige">
-                {cartCount}
+              <span className="absolute right-0 top-0 flex size-4 items-center justify-center rounded-full bg-foreground text-[9px] text-beige">
+                {cartCount > 9 ? "9+" : cartCount}
               </span>
             )}
           </Button>

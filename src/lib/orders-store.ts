@@ -4,10 +4,11 @@ import path from "node:path";
 export type StoredOrder = {
   id: string;
   createdAt: string;
-  status: "awaiting_payment" | "cod_pending";
+  status: "awaiting_payment" | "paid" | "payment_failed" | "cod_pending";
   paymentMethod: "online" | "cod";
   shippingMethod?: "nova_poshta";
   paymentNote?: string;
+  stripePaymentIntentId?: string;
   locale: string;
   customer: {
     name: string;
@@ -47,13 +48,21 @@ export async function readOrders(): Promise<StoredOrder[]> {
   }
 }
 
-export function saveOrder(order: StoredOrder): Promise<void> {
+export function saveOrder(
+  order: StoredOrder,
+  options?: { replaceId?: string },
+): Promise<void> {
   writeQueue = writeQueue.then(async () => {
     await mkdir(dataDirectory, { recursive: true });
     const orders = await readOrders();
-    orders.unshift(order);
+    const next = options?.replaceId
+      ? orders.map((item) => (item.id === options.replaceId ? order : item))
+      : [order, ...orders];
+    if (options?.replaceId && !orders.some((item) => item.id === options.replaceId)) {
+      next.unshift(order);
+    }
     const temporaryFile = `${ordersFile}.tmp`;
-    await writeFile(temporaryFile, JSON.stringify(orders, null, 2), "utf8");
+    await writeFile(temporaryFile, JSON.stringify(next, null, 2), "utf8");
     await rename(temporaryFile, ordersFile);
   });
   return writeQueue;

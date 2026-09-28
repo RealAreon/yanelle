@@ -95,12 +95,21 @@
     "novaPoshtaHint": "Dostawa do oddziału lub paczkomatu Nova Poshta na terenie Ukrainy. Bezpłatnie.",
     "novaPoshtaBranch": "Oddział / paczkomat Nova Poshta",
     "novaPoshtaBranchPlaceholder": "np. oddział nr 12, ul. Chreszczatyk 22",
-    "payOnline": "Płatność kartą online",
-    "payOnlineHint": "Bramka kartowa zostanie podłączona później. Zamówienie zapisze się jako demo.",
+    "payOnline": "Karta / Apple Pay / Google Pay",
+    "payOnlineHint": "Visa, Mastercard, Apple Pay i Google Pay przez Stripe. Po potwierdzeniu danych otworzy się formularz płatności.",
+    "paySecureTitle": "Bezpieczna płatność",
+    "paySecureHint": "Dane karty obsługuje Stripe. Nie przechowujemy ich.",
+    "orPayWithCard": "lub kartą",
+    "payNow": "Zapłać",
+    "paying": "Płatność…",
+    "backToDetails": "Wstecz",
+    "continueToPayment": "Przechodzimy do płatności",
+    "paymentFailed": "Płatność nie została ukończona. Spróbuj ponownie.",
+    "paymentSetupError": "Płatności nie skonfigurowano. Dodaj klucze Stripe do .env.",
     "payCod": "Płatność przy odbiorze",
     "payCodHint": "Płatność przy odbiorze w oddziale Nova Poshta. Opłaty przewoźnika płaci odbiorca według taryf NP.",
-    "placeOrder": "Złóż zamówienie",
-    "placing": "Składanie zamówienia…",
+    "placeOrder": "Przejdź do płatności",
+    "placing": "Tworzymy zamówienie…",
     "name": "Imię i nazwisko",
     "firstName": "Imię",
     "lastName": "Nazwisko",
@@ -130,10 +139,10 @@
   },
   "shipping": {
     "title": "Dostawa i zwroty",
-    "delivery": "Wysyłamy na Ukrainie przez Nova Poshta do oddziałów lub paczkomatów. Płatność przy odbiorze lub kartą online. Wysyłka międzynarodowa na życzenie.",
+    "delivery": "Wysyłamy na Ukrainie przez Nova Poshta do oddziałów lub paczkomatów. Płatność kartą online. Wysyłka międzynarodowa na życzenie.",
     "complimentary": "Darmowa dostawa Nova Poshta przy każdym zamówieniu.",
-    "returns": "Zwrot w ciągu 14 dni przy zachowaniu metek, opakowania i stanu towaru.",
-    "returnsVideo": "Przy płatnościach kartą zwrot jest możliwy wyłącznie z nieedytowanym wideo rozpakowania paczki."
+    "returns": "Zwrot w ciągu 2 dni przy zachowaniu metek, opakowania i stanu towaru.",
+    "returnsVideo": "Zwrot jest możliwy wyłącznie z nieedytowanym wideo rozpakowania paczki."
   },
   "contact": {
     "title": "Kontakt",
@@ -170,11 +179,11 @@
         },
         {
           "title": "Zamówienia i płatność",
-          "body": "Zamówienia składane są przez koszyk. Główna dostawa — Nova Poshta. Płatność przy odbiorze lub online (gdy bramka będzie dostępna).\n\nMożemy skontaktować się w celu potwierdzenia zamówienia. ＹＡＮÈＬＬＥ może odmówić realizacji w przypadku błędu ceny, braku towaru lub podejrzenia oszustwa."
+          "body": "Zamówienia składane są przez koszyk. Główna dostawa — Nova Poshta. Płatność kartą online.\n\nMożemy skontaktować się w celu potwierdzenia zamówienia. ＹＡＮÈＬＬＥ może odmówić realizacji w przypadku błędu ceny, braku towaru lub podejrzenia oszustwa."
         },
         {
           "title": "Dostawa i zwroty",
-          "body": "Warunki dostawy i zwrotów opisano na stronie Dostawa. Zwrot w ciągu 14 dni przy zachowaniu metek, opakowania i stanu. Przy płatności kartą może być wymagane wideo rozpakowania."
+          "body": "Warunki dostawy i zwrotów opisano na stronie Dostawa. Zwrot w ciągu 2 dni przy zachowaniu metek, opakowania i stanu. Może być wymagane wideo rozpakowania."
         },
         {
           "title": "Własność intelektualna",
