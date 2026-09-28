@@ -59,15 +59,15 @@ export function ProductCard({
         aria-label={wished ? "Remove from wishlist" : "Add to wishlist"}
         aria-pressed={wished}
         onClick={() => toggle(product.id)}
-        className="absolute right-2 top-2 z-10 flex size-10 cursor-pointer items-center justify-center text-foreground/85 drop-shadow-sm transition-colors duration-300 hover:text-foreground"
+        className="absolute right-2.5 top-2.5 z-10 flex size-9 cursor-pointer items-center justify-center rounded-full bg-black/25 text-white shadow-sm backdrop-blur-md transition-all duration-300 hover:bg-black/35 sm:size-10"
       >
         <Heart
-          size={20}
-          strokeWidth={1.5}
+          size={18}
+          strokeWidth={1.6}
           className={`transition-all duration-500 ease-out ${
             wished
               ? "scale-110 fill-[#c23b3b] text-[#c23b3b]"
-              : "fill-transparent"
+              : "fill-transparent text-white"
           }`}
         />
       </button>

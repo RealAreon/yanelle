@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { tLocal } from "@/lib/locale-text";
@@ -6,6 +5,7 @@ import {
   getCatalogProductBySlug,
   getCatalogProducts,
 } from "@/lib/shopify";
+import { ProductGallery } from "@/components/store/product-gallery";
 import { ProductPurchase } from "@/components/store/product-purchase";
 import { ProductCard } from "@/components/store/product-card";
 
@@ -33,20 +33,10 @@ export default async function ProductPage({
   return (
     <div className="page-gutter py-8 lg:py-14">
       <div className="grid gap-10 lg:grid-cols-[minmax(0,1.45fr)_minmax(340px,.55fr)] lg:gap-16">
-        <div className="grid gap-3 sm:grid-cols-2">
-          {product.images.map((image, index) => (
-            <div key={image} className={`relative aspect-[3/4] overflow-hidden bg-muted ${index === 0 && product.images.length > 2 ? "sm:col-span-2" : ""}`}>
-              <Image
-                src={image}
-                alt={`${tLocal(product.name, locale)} ${index + 1}`}
-                fill
-                priority={index === 0}
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-              />
-            </div>
-          ))}
-        </div>
+        <ProductGallery
+          images={product.images}
+          alt={tLocal(product.name, locale)}
+        />
         <ProductPurchase product={product} locale={locale} />
       </div>
       {related.length > 0 && (
